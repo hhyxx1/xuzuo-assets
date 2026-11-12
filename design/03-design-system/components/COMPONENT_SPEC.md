@@ -26,7 +26,7 @@
 | XzProgressSheet | taskId,stage,progress,cancellable | onCancel | queued,running,verify,success,failed,cancelled | 真任务的状态机绑定 |
 
 ## 四款互相一致的硬约束
-- 色板/字级/圆角/间距由 [tokens.json](tokens/tokens.json) 单一来源驱动；组件不硬编码应用名、不写 `#FF...` 作为颜色常量。
+- 色板/字级/圆角/间距由 [tokens.json](../tokens/tokens.json) 单一来源驱动；组件不硬编码应用名、不写 `#FF...` 作为颜色常量。
 - App 配色通过 `primary/secondary` 变体注入；例如同一个 `XzPrimaryButton` 在 LightBearing 金色、VoxCarve 紫藤色。
 - 共享交互状态：Normal/Pressed/Selected/Disabled/Loading/Error，Focus、读屏文案和大小屏策略一并复用。
 - 业务特有的画布不可硬复用：LightBearing 的太阳轨迹必须计算驱动、FrameMori 的相机依赖 Camera Kit、VoxCarve 的波形必须读取音频、MacroLoom 的执行状态必须来自 PC Agent 回执。
