@@ -1,0 +1,30 @@
+/* Xuzuo Studio, four-app visual family only. Draft UI tokens; no font files embedded. */
+:root {
+  --xz-bg:#0B1622; --xz-surface:#152836; --xz-raised:#1C3546; --xz-border:#3D5360;
+  --xz-text:#F9FAF3; --xz-muted:#93A9B6; --xz-danger:#F27573; --xz-success:#76D1A2;
+  --xz-accent:#FFBC6B; --xz-accent2:#73D9D5;
+  --xz-r-sm:10px; --xz-r-md:14px; --xz-r-lg:18px; --xz-r-xl:24px;
+  --xz-space-1:4px; --xz-space-2:8px; --xz-space-3:12px; --xz-space-4:16px; --xz-space-6:24px; --xz-space-8:32px;
+  color-scheme:dark;
+}
+[data-xz-app="lightbearing"]{--xz-accent:#FFBC6B;--xz-accent2:#73D9D5}
+[data-xz-app="framemori"]{--xz-accent:#FF9471;--xz-accent2:#75DDC4}
+[data-xz-app="voxcarve"]{--xz-accent:#AF9DFF;--xz-accent2:#FDBF92}
+[data-xz-app="macroloom"]{--xz-accent:#B3F07C;--xz-accent2:#7FC8FF}
+[data-xz-theme="light"] {
+  --xz-bg:#F4F1EA;--xz-surface:#FFFFFF;--xz-raised:#E7EDEB;--xz-border:#CCD8D6;
+  --xz-text:#141F2A;--xz-muted:#52636D;--xz-danger:#B83C39;--xz-success:#167C4F; color-scheme:light
+}
+.xz-app{min-height:100vh;background:var(--xz-bg);color:var(--xz-text);font-family:system-ui,-apple-system,"HarmonyOS Sans","Noto Sans SC",sans-serif}
+.xz-card{background:var(--xz-surface);border:1px solid var(--xz-border);border-radius:var(--xz-r-lg);padding:16px}
+.xz-topbar{height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.xz-button{min-height:48px;border-radius:14px;font-size:15px;font-weight:700;padding:0 18px;cursor:pointer}
+.xz-button--primary{background:var(--xz-accent);color:#0B1622;border:0}
+.xz-button--secondary{background:var(--xz-raised);border:1px solid var(--xz-border);color:var(--xz-text)}
+.xz-icon-button{width:48px;height:48px;display:grid;place-items:center;border:1px solid var(--xz-border);border-radius:14px}
+.xz-chip{border-radius:999px;background:var(--xz-raised);padding:7px 12px;white-space:nowrap}
+.xz-chip[aria-selected="true"]{background:var(--xz-accent);color:#0B1622}
+.xz-list-cell{display:flex;align-items:center;gap:12px;min-height:64px;border-bottom:1px solid var(--xz-border)}
+.xz-muted{color:var(--xz-muted)}.xz-swatch{width:32px;height:32px;border-radius:10px;background:var(--swatch)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--xz-accent2);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
