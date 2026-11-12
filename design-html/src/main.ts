@@ -51,7 +51,7 @@ function render(): void {
     '</section>' + renderInspector(app,page) + '</main>';
 }
 function showToast(message: string): void {
-  const old: HTMLElement | null = document.querySelector('.toast');
+  const old: HTMLElement | null = document.querySelector<HTMLElement>('.toast');
   if (old) old.remove();
   const toast: HTMLDivElement = document.createElement('div');
   toast.className = 'toast';
