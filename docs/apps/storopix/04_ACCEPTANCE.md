@@ -1,8 +1,12 @@
 # 店图匠 / StoroPix · 产品验收测试与测试矩阵
 
-> Xuzuo Studio · API 26 only · v0.1 草案，等待用户审核；不代表编译验证。
+> Xuzuo Studio · API 26 only · v0.3 草案，等待用户审核；不代表编译验证。
 
-**应用**：店图匠 / StoroPix · **Bundle**：`com.hhyxx1.storopix` · **代码仓库**：（待创建独立仓库）。
+**应用**：店图匠 / StoroPix · **Bundle**：`com.hhyxx.storopix` · **代码仓库**：https://github.com/hhyxx1/storopix。
+
+## 0. 已有项目的测试溯源与本轮验收边界
+
+StoroPix 不是空工程。已有 [源码](https://github.com/hhyxx1/storopix) 的 `documents/DEVICE_VALIDATION.md`、`documents/FOREGROUND_DEVICE_ACCEPTANCE_20261106.md`、`documents/PRD_CLOSURE.md` 记录了历史编译与部分设备验收。下表 `NOT_RUN` **仅表示本轮系列设计改造尚未重新执行对应测试**，不能据此断言原版功能未实现或未测试。新的 `PASS` 必须附本轮代码 SHA、设备与证据；此前历史结果可追溯但不自动计入新设计验收。
 
 ## 0. 签收原则
 
