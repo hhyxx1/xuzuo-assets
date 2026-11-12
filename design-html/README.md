@@ -2,6 +2,10 @@
 
 > **状态：设计预览 v0.1 / DRAFT_FOR_REVIEW。** 所有页面为视觉与交互说明，不宣称原生 HarmonyOS 已实现或通过真机测试。
 
+## 免安装快速预览
+
+**推荐先查看 [单文件离线交互预览](preview-standalone.html)**：在 GitHub 打开文件并选择 **Download raw**，保存成 `preview-standalone.html`，用 Chrome / Edge 双击打开即可。它把 HTML、CSS、浏览器 JS 与 42 页数据打包到同一个文件，**不需要 Node、npm 或 HTTP 服务器**。源码仍以 `src/*.ts` 为主。
+
 ## 预览与运行
 
 在 `design-html/` 目录：
@@ -38,6 +42,7 @@ python3 -m http.server 8123
 - `src/render.ts`：21 类可复用视觉组件的浏览器 HTML 适配。
 - `src/main.ts`：应用切换、页面切换、主题、设备宽度及四态交互。
 - `dist/`：可由 TypeScript 编译器重新生成的浏览器 JS。
+- `preview-standalone.html`：零依赖离线展示版，仅用于设计审阅；不替代 TS 源文件。
 - `docs/pages/`：42 份一页一文件的开发验收规格。
 - `docs/ASSET_PROMPTS.md`：后续需要 AI 生图的独立素材与精准提示词。
 - `docs/COMPONENT_CONTRACTS.md`：TS 设计接口 ↔ ArkUI 组件映射。
