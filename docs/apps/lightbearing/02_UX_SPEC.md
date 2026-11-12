@@ -6,6 +6,16 @@
 
 **设计与生产状态区别**：[R2 视觉原型](https://github.com/hhyxx1/LightBearing/blob/fix/core-quality-audit/design/ui1b-r2/final-home.html) 已存在于 `fix/core-quality-audit`，但其 [设计报告](https://github.com/hhyxx1/LightBearing/blob/fix/core-quality-audit/docs/design/UI1B_R2_FINAL_DESIGN.md) 明确说明当轮未修改生产 ArkTS。此文件规定下一轮目标，**不等同于已上架真实 UI**；实现前与现有 HomePage/ObservationPanel/Charts 对照。
 
+
+## v1.0 四层设计交付映射（2026-11-12）
+
+- **所有页面的新视觉权威来源**：[设计交付总入口](../../../design/README.md)、[42 页画廊](../../../design/02-page-designs/README.md)、[共享组件合同](../../../design/03-design-system/components/COMPONENT_SPEC.md)、[统一 Token](../../../design/03-design-system/tokens/tokens.json)。本文件 S01…Sxx 保留**业务需求/页面路由/验收场景**地位；与新增 SVG 在视觉、导航布局、视觉组件结构冲突时，以新 `design/` 交付为准。
+- 该产品的 [逐页设计索引](../../../design/02-page-designs/indexes/lightbearing.md) 与 `design/02-page-designs/specs/lightbearing/` 为页面级组件/事件/状态合同。
+- LightBearing、FrameMori、VoxCarve、MacroLoom 只共用基础 UI 组件和 token；各自相机/太阳图表/波形/宏按钮必须以原生业务组件实现，不使用静态 SVG 当真实数据结果。
+- 用户已经批准这四款采取同一视觉语言并开始设计资源制作，**不等于批准将 PNG/图标直接上架，也不等于编译通过**。
+
+**LightBearing 视觉彻底重构**：禁止参考旧 UI 与 UI-1B-R2 的布局、CSS、视觉稿。业务算法和测试记录可作为功能依据，参考 [全新 UI 的明确边界](../../../design/02-page-designs/LIGHTBEARING_FRESH_REDESIGN.md)。
+
 ## 1. 视觉身份
 
 - 品牌方向：太阳轨迹 + 地平线 + 观测节点。
