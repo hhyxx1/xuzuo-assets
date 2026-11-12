@@ -25,6 +25,7 @@
 - [01_ENV_SKILLS_AND_API.md](01_ENV_SKILLS_AND_API.md)：技能发现、本机 SDK、官方 API Reference 的强制查证流程。
 - [PARALLEL_AND_HANDOFF.md](PARALLEL_AND_HANDOFF.md)：多 AI 并行时如何隔离工作区、同步共享组件契约、交接。
 - [OFFICIAL_SOURCES.md](OFFICIAL_SOURCES.md)：华为官方参考起点和 API 核验证据模板。
+- [TOOLS_ENV_PLAYBOOK.md](TOOLS_ENV_PLAYBOOK.md)：Windows/Linux 本机 Skills/DevEco/hdc 探测命令示例（因安装环境不同需先核对）。
 - 原产品文件在 docs/apps/<slug>/；设计模型在 design-html/src/；ArkTS 移植说明在 design-html/docs/ARKTS_PORTING.md。
 
 ## 仓库角色

@@ -4,7 +4,9 @@
 
 **应用**：帧间 / FrameMori · **Bundle**：`com.hhyxx.framemori` · **代码仓库**：（待创建独立仓库）。
 
-> 复制下面整段作为新编程会话的任务。请同时把本应用的其他五份 Markdown 规范放到工作区并允许 AI 读取。
+> **最新版直接执行指令在 [docs/development/README.md](../../development/README.md) 与对应的 [APPS 专项合同](../../development/APPS/framemori.md)。** 本页保留为旧版参考；实际 AI 开发必须执行新的 Skills 发现、官方 API26 核验与极简工具 UI 决策。
+>
+> 本页仍可作为历史需求索引，但与新版指令冲突时以新版为准。
 
 ```text
 你是 HarmonyOS 7 / API 26 原生应用高级工程师，负责完整开发「帧间 / FrameMori」。
