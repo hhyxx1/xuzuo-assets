@@ -1,6 +1,6 @@
 # 键阵 / MacroLoom · UI / UX 完整设计规格
 
-> Xuzuo Studio · API 26 only · v0.1 草案，等待用户审核；不代表编译验证。
+> Xuzuo Studio · API 26 only · v0.3 草案，等待用户审核；不代表编译验证。
 
 **应用**：键阵 / MacroLoom · **Bundle**：`com.hhyxx.macroloom` · **代码仓库**：（待创建独立仓库，必须包含 Windows Agent）。
 
