@@ -1,6 +1,6 @@
 # 帧间 / FrameMori · 技术架构与 API26 实施规格
 
-> Xuzuo Studio · API 26 only · v0.1 草案，等待用户审核；不代表编译验证。
+> Xuzuo Studio · API 26 only · v0.3 草案，等待用户审核；不代表编译验证。
 
 **应用**：帧间 / FrameMori · **Bundle**：`com.hhyxx.framemori` · **代码仓库**：（待创建独立仓库）。
 
