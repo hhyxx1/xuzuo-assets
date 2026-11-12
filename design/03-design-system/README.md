@@ -2,7 +2,7 @@
 
 唯一 token 来源：[tokens.json](tokens/tokens.json)；浏览器/概念原型的 CSS 参考：[tokens.css](tokens/tokens.css)。
 
-- [共享组件合同](components/COMPONENT_SPEC.md)：19 类基础组件的 Props、事件、状态、原生实现建议
+- [共享组件合同](components/COMPONENT_SPEC.md)：20 类基础组件的 Props、事件、状态、原生实现建议
 - [组件状态与无障碍](components/STATES_AND_ACCESSIBILITY.md)
 - [可点击组件状态画廊](components/gallery.html)（下载仓库后离线打开）
 - **[组件图谱 SVG](components/component-atlas.svg)**：GitHub 可直接预览的基础控件板

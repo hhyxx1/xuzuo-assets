@@ -5,7 +5,7 @@
 - 以用户明确批准的颜色为准，四款同视觉：逐光 `#FFBC6B/#73D9D5`、帧间 `#FF9471/#75DDC4`、声剪 `#AF9DFF/#FDBF92`、键阵 `#B3F07C/#7FC8FF`。
 - 五份 01 概念 SVG（四个方向 + 一张总览）。
 - 02 层：按 v0.3 路由全覆盖的 42 个业务页面 SVG + 42 份逐页组件/交互/状态/验收 MD；独立离线 HTML 画廊。
-- 03 层：统一 machine-readable Token、CSS 参考、19 类组件合同、组件图谱 SVG、可点击状态画廊、ArkUI 实施映射。
+- 03 层：统一 machine-readable Token、CSS 参考、20 类组件合同、组件图谱 SVG、可点击状态画廊、ArkUI 实施映射。
 - 04 层：94 份独立 SVG 素材 + 4 份 256×256 PNG 图标预览；来源/用途/尺寸/Git blob SHA 清单与导出脚本。
 - LightBearing 新视觉完全从头设计；不参考旧 UI/R2，业务算法不重写。
 - StoroPix 原有独立视觉不参与变更。
