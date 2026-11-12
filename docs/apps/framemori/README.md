@@ -1,6 +1,6 @@
 # 帧间 / FrameMori 文档包
 
-> v0.1 用户预览阶段；不包含素材。
+> v0.3 用户预览阶段；不包含素材。
 
 **Bundle**：`com.hhyxx.framemori`；**目标**：HarmonyOS 7 / API 26 only。
 
