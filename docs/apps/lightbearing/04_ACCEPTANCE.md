@@ -1,8 +1,10 @@
 # 逐光 / LightBearing · 产品验收测试与测试矩阵
 
-> Xuzuo Studio · API 26 only · v0.1 草案，等待用户审核；不代表编译验证。
+> Xuzuo Studio · API 26 only · v0.3 草案，等待用户审核；不代表编译验证。
 
 **应用**：逐光 / LightBearing · **Bundle**：`com.hhyxx.LightBearing` · **代码仓库**：https://github.com/hhyxx1/LightBearing。
+
+**历史测试说明**：`fix/core-quality-audit` 的 [02B3C 记录](https://github.com/hhyxx1/LightBearing/blob/fix/core-quality-audit/docs/audit/02B3C_TIME_INTERACTION.md) 有当时 99/99 宿主机与真实设备时区测试证据，但本表的 `NOT_RUN` 仅表示**v0.3 UI 迭代尚未在相应提交上重新跑**，不否定原项目旧版验证成果。测试报告必须固定 SHA、日期、设备与 SDK 后才能更新为 `PASS`。
 
 ## 0. 签收原则
 
