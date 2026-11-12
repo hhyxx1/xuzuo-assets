@@ -35,14 +35,14 @@
 | **键阵 MacroLoom** | HarmonyOS 控制 Windows 快捷操作 | [七篇文档](docs/apps/macroloom/README.md) |
 | **店图匠 StoroPix** | **已上架 0.2.0（开发者确认）**；现有商品图批量处理应用，后续增量优化 | [七篇文档](docs/apps/storopix/README.md) |
 
-每款均含：产品 PRD、页面与交互规范、技术架构、验收矩阵、素材需求清单、AI 开发任务书、导航 README。
+每款均含：**六类核心规格**（产品 PRD、页面与交互规范、技术架构、验收矩阵、素材需求清单、AI 开发任务书）**加一份导航 README，共七个文件**。v0.3 草案仓库合计 **48 个 Markdown 文件**（根 README 1 个 + `docs/` 下 47 个）。
 
 ## 重要约束
 
 - **现有 StoroPix 源码包名是 `com.hhyxx.storopix`，并非 `com.hhyxx1.storopix`**；[源码](https://github.com/hhyxx1/storopix) `AppScope/app.json5` 与其 README 已核对，后续不得修改已注册应用身份。
 
 - **LightBearing 现有 AGC 注册 Bundle Name：`com.hhyxx.LightBearing`**。不得按早期 PRD 擅自改成全小写。已有 [源码仓库](https://github.com/hhyxx1/LightBearing) 与 `fix/core-quality-audit` 质量审计分支；本库只管理该应用的设计开发文档，不覆盖业务代码。
-- 目标基线 **HarmonyOS 7 / API 26（26.0.0 Release）**；华为官方于 2026-08-29 发布 [SDK 26.0.0 Release](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-2600/)。每项高风险接口、编解码与设备能力仍需单独核验。
+- 目标基线 **HarmonyOS 7 / API 26（26.0.0 Release）**；华为官方[详细版本表](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-2600/)将正式发布日期列为 2026-08-29，而[版本汇总页](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-allversion/)列为 2026-08-28；两处日期差异已标明，均确认 26.0.0 为 Release。每项高风险接口、编解码与设备能力仍需单独核验。
 - **所有 PRD、设计稿与测试矩阵都是待审核的开发规格**，不能视作已编译、已实现或已在真机验证。
 - **审核同意前不生成或上传任何新增图片素材**。今后的 AI 生成原图、正式优化资源、授权来源与版本信息分开管理。
 - 原创品牌名称、图标与内容未来是否公开授权，尚未决定；请勿默认开源可商用。
