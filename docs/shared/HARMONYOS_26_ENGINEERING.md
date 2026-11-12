@@ -2,6 +2,8 @@
 
 ## 版本/工程基线
 
+- **包名纪律**：`bundleName` 是应用唯一标识，AGC 创建应用时要求与 DevEco `AppScope/app.json5` **完全一致**，注册后不支持修改。新 App 推荐 `com.hhyxx.<app>`（待注册）；既有 LightBearing 保留 `com.hhyxx.LightBearing`，StoroPix 保留 `com.hhyxx.storopix`。不要将 GitHub 账号 `hhyxx1` 当作包名账号段推导依据；也不要未经核实宣称 AGC 一定区分或忽略大小写，**按原注册字符串逐字匹配**。详见 [包名登记](../03_PACKAGE_AND_RELEASE_REGISTRY.md) 与 [华为官方 AGC 新建应用规范](https://developer.huawei.com/consumer/cn/doc/App/agc-help-create-app-0000002247955506/)。
+
 - Target：HarmonyOS 7，API 26 only；Stage 模型、ArkTS、ArkUI。
 - 新建工程以 本地 DevEco Studio 和 API26 工程模板为准：逐项核实 `compileSdkVersion`、`compatibleSdkVersion`、`targetSdkVersion` 的 schema 与 HAP 产出位置。
 - 普通个人开发者签名为前提，不勾受限 ACL，不依赖系统签名、root、隐藏 API 或 Android-only SDK。
@@ -60,5 +62,7 @@
 ## API 26 公开版本核实（2026-11-12）
 
 华为 [26.0.0 开发套件版本总览](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-2600/) 明确列出：API 26.0.0 Release 于 **2026-08-29** 发布；配套 HarmonyOS SDK 26.0.0 Release（基于 OpenHarmony `Ohos_sdk_public 26.0.0.105`）同日发布。DevEco Studio 的 26.0.0 Release 与后续补丁版本也已公开。华为的 [开发套件兼容性说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-studio-new-features-2600/) 说明 `compileSdkVersion=26.0.0` 支持使用，但兼容/目标 SDK 的合法区间应依本机 IDE 配置核实。
+
+**日期口径**：华为 26.0.0 详细版本概览的正式发布表列 **2026-08-29**，但其[所有版本汇总页](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-allversion/) 列 **2026-08-28**；在官方页面并存差异未解释前，以“2026 年 8 月正式 Release”作为跨文档简述，详细引用两份官方页面，不把 1 天差异当作 SDK 行为差异。截止本次核查，26.0.1 为 Beta1，系列仍锁定 26.0.0 Release。
 
 **解释边界：**“API 26 已正式发布”≠“每个官方 Kit、HMS 服务、设备编解码器、AI 能力都对普通第三方应用开放”。新增代码必须记录接口来源、SDK 声明、`since`、`SystemCapability`、权限/ACL、真机验证证据及失败降级路径；未验证项不得称为可用。
