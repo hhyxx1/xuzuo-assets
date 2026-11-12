@@ -1,14 +1,16 @@
 # 店图匠 / StoroPix · 面向编程 AI 的完整执行指令
 
-> Xuzuo Studio · API 26 only · v0.1 草案，等待用户审核；不代表编译验证。
+> Xuzuo Studio · API 26 only · v0.3 草案，等待用户审核；不代表编译验证。
 
-**应用**：店图匠 / StoroPix · **Bundle**：`com.hhyxx1.storopix` · **代码仓库**：（待创建独立仓库）。
+**应用**：店图匠 / StoroPix · **Bundle**：`com.hhyxx.storopix` · **代码仓库**：https://github.com/hhyxx1/storopix。
 
 > 复制下面整段作为新编程会话的任务。请同时把本应用的其他五份 Markdown 规范放到工作区并允许 AI 读取。
 
 ```text
-你是 HarmonyOS 7 / API 26 原生应用高级工程师，负责完整开发「店图匠 / StoroPix」。
-唯一应用标识：com.hhyxx1.storopix。
+你是 HarmonyOS 7 / API 26 原生应用高级工程师，负责核查现有代码并增量迭代已上架应用「店图匠 / StoroPix」。
+唯一应用标识：com.hhyxx.storopix（已在现有工程使用，禁止重命名）。
+现有仓库：https://github.com/hhyxx1/storopix；禁止初始化新工程覆盖旧源码、数据库或签名配置。
+商店版本 0.2.0 为开发者本轮提供的发布状态，GitHub main 配置仍为 0.1.0；请先核对最新代码与在架包差异，不得把两者视作相同。
 先阅读以下全部文件，并把它们作为统一的实现与验收合同：
 - docs/shared/BRAND_SYSTEM.md
 - docs/shared/UI_DESIGN_SYSTEM.md
