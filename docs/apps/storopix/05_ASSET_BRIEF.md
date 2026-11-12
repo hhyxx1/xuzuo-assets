@@ -1,10 +1,12 @@
 # 店图匠 / StoroPix · 素材制作需求清单（暂不生成）
 
-> Xuzuo Studio · API 26 only · v0.1 草案，等待用户审核；不代表编译验证。
+> Xuzuo Studio · API 26 only · v0.3 草案，等待用户审核；不代表编译验证。
 
-**应用**：店图匠 / StoroPix · **Bundle**：`com.hhyxx1.storopix` · **代码仓库**：（待创建独立仓库）。
+**应用**：店图匠 / StoroPix · **Bundle**：`com.hhyxx.storopix` · **代码仓库**：https://github.com/hhyxx1/storopix。
 
 **阶段：`AWAITING_APPROVAL`。本文件仅是设计需求，禁止在审核前调用生图或把生成文件上传到仓库。**
+
+**现有资产保护**：仓库已有 `AppScope/resources/base/media/storopix_icon.png` 与 `pictures/` 等设计资源。需先盘点权利、设计与发布版本，在用户批准后才考虑替换或新增素材。不得无条件覆盖应用市场当前图标。
 
 ## 1. 方向与色彩
 
