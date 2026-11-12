@@ -2,6 +2,8 @@
 
 > **文档版本：v0.3｜状态：DRAFT_FOR_REVIEW｜草案日期：2026-11-12**。本规范尚待用户批准，不代表已发布或真机验收。
 
+**最新可直接执行的分阶段 AI 开发提示词入口：**[docs/development/README.md](../development/README.md)。与旧视觉或 LightBearing R2 落地指令冲突时，以新的 [简约工具 UI 裁定](../development/MINIMAL_UI_DIRECTIVE.md) 和 [文档优先级](../development/DOC_ORDER.md) 为准。
+
 ## 读取顺序
 
 1. 读 `README.md`、`docs/00_START_HERE.md`、`docs/shared/*`。

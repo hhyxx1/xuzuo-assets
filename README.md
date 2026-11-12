@@ -4,6 +4,14 @@
 >
 > **本仓库定位：** Xuzuo Studio 系列应用的跨项目产品文档、设计规范及未来品牌素材库。不是将五款 App 源码混合在一起的工程。当前**只提交文档，不含新素材、应用代码或真实用户数据**。
 
+## 原生 App AI 开发提示词（最新入口）
+
+- **[完整分阶段开发执行手册](docs/development/README.md)**：四款独立原生 ArkTS 工程，包含官方 API26 / 本机 Skills 检索、逐阶段开发、构建、验收与交接。
+- **[四款直接复制的首条 AI 开发消息](docs/development/START_MESSAGES.md)**：各 App 一条，按 00 → 02 → 03 → 04 → 05 → 06 → 07 推进；00 会执行阶段 01。
+- **[极简实用 UI 最新约束](docs/development/MINIMAL_UI_DIRECTIVE.md)**：覆盖旧 HTML 概念图大面积渐变和旧 R2 视觉。**LightBearing 的新 UI 不照搬旧版，算法/数据库仍保护。**
+
+> 四款 App 代码不放进 xuzuo-assets；本仓库维护设计/提示词，App 在各自源码仓库独立开发。StoroPix 保持独立视觉。
+
 ## 从这里开始
 
 - **[已注册包名与版本来源登记](docs/03_PACKAGE_AND_RELEASE_REGISTRY.md)**：已上线产品与未注册候选的身份对照；严禁按 GitHub 用户名猜包名。
