@@ -10,6 +10,8 @@
 - [机器可读页面清单](page-manifest.json)
 - [共享组件预览](../03-design-system/components/gallery.html)
 
+- [浅色与宽屏的 8 张设计示例](ADAPTIVE_PREVIEWS.md)：同一 Token 机制，最终业务适配仍需在真机验证。
+
 ## 每个页面包含
 独立的布局 SVG、主 CTA、列表/仪表、底部导航、明确的视觉层级；对应的 MD 规格覆盖页面目标、组件属性、点击事件、导航、异常与空态、加载、权限、响应式、无障碍、真实数据映射。
 
