@@ -1,6 +1,6 @@
 # 逐光 / LightBearing · 产品需求 PRD
 
-> Xuzuo Studio · API 26 only · v0.1 草案，等待用户审核；不代表编译验证。
+> Xuzuo Studio · API 26 only · v0.3 草案，等待用户审核；不代表编译验证。
 
 **应用**：逐光 / LightBearing · **Bundle**：`com.hhyxx.LightBearing` · **代码仓库**：https://github.com/hhyxx1/LightBearing。
 
@@ -15,7 +15,7 @@
 
 ## 2. 产品交付边界
 
-**这是已有工程的迭代 PRD，而非新项目初始化说明。** 首先检查 `hhyxx1/LightBearing` 的 `main` 和 `fix/core-quality-audit`，确认已实现、未落地的 R2 设计、现存签名与用户 RDB；保持已注册大写 Bundle Name `com.hhyxx.LightBearing`。以已有的 99 项宿主机测试/设备时区测试记录作为历史证据，但本次改版仍需重新测试，不得直接继承通过结论。
+**这是已有工程的迭代 PRD，而非新项目初始化说明。** 首先检查 `hhyxx1/LightBearing` 的 `main` 和 `fix/core-quality-audit`，确认已实现、未落地的 R2 设计、现存签名与用户 RDB；保持已注册大写 Bundle Name `com.hhyxx.LightBearing`。可追溯的 [02B3C 历史审计记录](https://github.com/hhyxx1/LightBearing/blob/fix/core-quality-audit/docs/audit/02B3C_TIME_INTERACTION.md) 记载了当时 99/99 宿主机测试与真机时区测试；该计数为历史快照，**不是当前工作区的测试数，也不是此次设计改版已经通过**，必须以新 commit 重新执行。具体代码快照及 GitHub compare 依据见 [事实登记表](../../03_PACKAGE_AND_RELEASE_REGISTRY.md)。
 
 **完整功能范围**（以下每一条都必须实现或记录受 SDK/硬件限制的真实原因和可操作降级，禁止伪装已经完成）：
 
