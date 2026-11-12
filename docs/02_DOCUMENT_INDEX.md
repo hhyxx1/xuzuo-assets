@@ -1,5 +1,7 @@
 # 文档目录 / Document Index
 
+> **文档版本：v0.3｜状态：DRAFT_FOR_REVIEW｜草案日期：2026-11-12**。本文件不代表工程已完成验收。
+
 - **[已注册包名、发布版本与来源登记](03_PACKAGE_AND_RELEASE_REGISTRY.md)**
 
 ## 逐光 / LightBearing
