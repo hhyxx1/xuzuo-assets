@@ -1,8 +1,15 @@
 # 店图匠 / StoroPix · 产品需求 PRD
 
-> Xuzuo Studio · API 26 only · v0.1 草案，等待用户审核；不代表编译验证。
+> Xuzuo Studio · API 26 only · v0.3 草案，等待用户审核；不代表编译验证。
 
-**应用**：店图匠 / StoroPix · **Bundle**：`com.hhyxx1.storopix` · **代码仓库**：（待创建独立仓库）。
+**应用**：店图匠 / StoroPix · **Bundle**：`com.hhyxx.storopix` · **代码仓库**：https://github.com/hhyxx1/storopix。
+
+## 0. 已有产品事实与本规格的边界
+
+- **已有仓库**：[hhyxx1/storopix](https://github.com/hhyxx1/storopix)，实际应用配置 `AppScope/app.json5` 的包名是 `com.hhyxx.storopix`，**不应修改**。
+- **发布状态**：开发者报告应用市场已上架 **0.2.0**；仓库 `main` 在本轮核查时仍标 `versionName: 0.1.0`。不能把公开源码构建等同于商店 0.2.0，二者后续应以 AGC 发布记录和源码 tag/commit 对照。
+- **已有能力**：仓库 README 记录批量导入、风格预设、非破坏性图像调整、队列、照片分割设备降级、保存/分享与真机验收。这些作为现有基线；本 PRD 中新增或调整的体验属于下一版本候选，**不能反向宣称当前在架版本缺少或已具备具体功能**。
+- **实施方式**：只在原有工程上差异化优化；保留原项目数据、签名、包名、隐私处理与既有测试。先做功能差距矩阵，后做迭代实现，避免重复造轮子。
 
 ## 1. 产品定义
 
