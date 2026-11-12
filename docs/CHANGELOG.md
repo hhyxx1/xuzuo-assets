@@ -2,6 +2,14 @@
 
 ## v0.3 — 2026-11-12（审计修订，DRAFT_FOR_REVIEW）
 
+### 2026-11-12 视觉范围补充（用户已确认此范围，其他事项仍待审批）
+
+- **四款同风格**：LightBearing、FrameMori、VoxCarve、MacroLoom 共用基础视觉设计语言；各应用保留独立交互与强调色。
+- **StoroPix 保留独立已定型视觉**：不作为这四款的强制换肤对象，不擅自替换已发布图标、商店素材或页面结构。
+- 修改 BRAND_SYSTEM、UI_DESIGN_SYSTEM、ASSET_PIPELINE、文档入口、产品地图与 StoroPix 的 UX/素材清单/AI 任务书，防止编程 AI 把系列视觉套用到 StoroPix。
+- 本次仅确定设计**范围**，尚未批准具体素材制作、代码更改或合并 PR；文档版本仍为 v0.3 待审草案。
+
+
 - 全面核对 [包名与版本事实登记](03_PACKAGE_AND_RELEASE_REGISTRY.md)：`com.hhyxx.storopix` 是 StoroPix 真实包名，原写 `com.hhyxx1.storopix` 错误；保留 LightBearing 已注册的 `com.hhyxx.LightBearing`。
 - StoroPix 已上架 0.2.0 为开发者本轮提供的信息；GitHub `main` 仍写 `versionName: 0.1.0`，发布 HAP 与公开源码的对应 SHA 尚待 AGC/构建记录核查。
 - StoroPix 由“待创建项目”改为已有产品的增量开发与品牌迭代；继承已有代码与历史测试证据，不重建工程。
