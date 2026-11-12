@@ -1,5 +1,7 @@
 # HarmonyOS API 26 工程与 SDK 准入规范
 
+> **文档版本：v0.3｜状态：DRAFT_FOR_REVIEW｜草案日期：2026-11-12**。本文件不代表工程已完成验收。
+
 ## 版本/工程基线
 
 - **包名纪律**：`bundleName` 是应用唯一标识，AGC 创建应用时要求与 DevEco `AppScope/app.json5` **完全一致**，注册后不支持修改。新 App 推荐 `com.hhyxx.<app>`（待注册）；既有 LightBearing 保留 `com.hhyxx.LightBearing`，StoroPix 保留 `com.hhyxx.storopix`。不要将 GitHub 账号 `hhyxx1` 当作包名账号段推导依据；也不要未经核实宣称 AGC 一定区分或忽略大小写，**按原注册字符串逐字匹配**。详见 [包名登记](../03_PACKAGE_AND_RELEASE_REGISTRY.md) 与 [华为官方 AGC 新建应用规范](https://developer.huawei.com/consumer/cn/doc/App/agc-help-create-app-0000002247955506/)。
