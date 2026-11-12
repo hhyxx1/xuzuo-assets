@@ -1322,5 +1322,47 @@
       "productionExport": "NOT_VERIFIED",
       "dataAccuracy": "Illustrations only; runtime values must be computed or queried by App"
     }
+  ],
+  "previewRasterExports": [
+    {
+      "app": "lightbearing",
+      "path": "design/04-assets/exports/app-icons/lightbearing-preview-256.png",
+      "width": 256,
+      "height": 256,
+      "format": "PNG",
+      "gitBlobSha": "22f2f7d3b9644723e6f2588ff9d53f46d5c8c7c1",
+      "origin": "original programmatic vector motif rasterized at 256px",
+      "status": "DESIGN_PREVIEW_NOT_RELEASE_ICON"
+    },
+    {
+      "app": "framemori",
+      "path": "design/04-assets/exports/app-icons/framemori-preview-256.png",
+      "width": 256,
+      "height": 256,
+      "format": "PNG",
+      "gitBlobSha": "5a1375c9b258637d7ce25357821808fe85607f93",
+      "origin": "original programmatic vector motif rasterized at 256px",
+      "status": "DESIGN_PREVIEW_NOT_RELEASE_ICON"
+    },
+    {
+      "app": "voxcarve",
+      "path": "design/04-assets/exports/app-icons/voxcarve-preview-256.png",
+      "width": 256,
+      "height": 256,
+      "format": "PNG",
+      "gitBlobSha": "cf9bfefcb85dcb61e959fe168f8fb193b8af0a99",
+      "origin": "original programmatic vector motif rasterized at 256px",
+      "status": "DESIGN_PREVIEW_NOT_RELEASE_ICON"
+    },
+    {
+      "app": "macroloom",
+      "path": "design/04-assets/exports/app-icons/macroloom-preview-256.png",
+      "width": 256,
+      "height": 256,
+      "format": "PNG",
+      "gitBlobSha": "cae9b66809dd0d76fece09658949eb9cc6930d62",
+      "origin": "original programmatic vector motif rasterized at 256px",
+      "status": "DESIGN_PREVIEW_NOT_RELEASE_ICON"
+    }
   ]
 }

@@ -11,6 +11,8 @@
 - [功能插画](feature/)
 - [可选的序作品牌标识](brand/xuzuo-mark.svg)
 
+**[资源导出与 HAP 接入指导](EXPORT_GUIDE.md)**：含四款 256×256 预览 PNG 和可选的批量 SVG→PNG/WebP 导出脚本；**预览 PNG 不是终版商店图标**。
+
 ## 程序开发接入说明
 1. 从 `assets.json` 选择素材；核对来源/许可状态和实际 viewBox。图标主色从共享 Token 读取。
 2. 源图（SVG）→ **按系统 SDK26 / 设备图形管线实际支持情况**导出 PNG/WebP 或其他兼容格式；避免直接认定 HarmonyOS 所有 Image 能完全支持 SVG 滤镜/文本。
