@@ -1,0 +1,554 @@
+{
+  "schemaVersion": 1,
+  "revision": "design-kit-v1",
+  "date": "2026-11-12",
+  "scope": "All approved PRD routes, visual designs only, not compiled",
+  "pages": [
+    {
+      "app": "framemori",
+      "id": "audio",
+      "designSvg": "design/02-page-designs/screens/framemori/audio.svg",
+      "specMarkdown": "design/02-page-designs/specs/framemori/audio.md",
+      "gitBlobSha": "e74d15d602302f45882a4eff495e9a6e342b12ae",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "framemori",
+      "id": "capture",
+      "designSvg": "design/02-page-designs/screens/framemori/capture.svg",
+      "specMarkdown": "design/02-page-designs/specs/framemori/capture.md",
+      "gitBlobSha": "be85d9187c8ae26137b7f4db45910b44f8039fbe",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "framemori",
+      "id": "export",
+      "designSvg": "design/02-page-designs/screens/framemori/export.svg",
+      "specMarkdown": "design/02-page-designs/specs/framemori/export.md",
+      "gitBlobSha": "d4d576255b10c36c25ed43324eac73bb62d28c12",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "framemori",
+      "id": "frame-editor",
+      "designSvg": "design/02-page-designs/screens/framemori/frame-editor.svg",
+      "specMarkdown": "design/02-page-designs/specs/framemori/frame-editor.md",
+      "gitBlobSha": "721b096a90654f308f9feb0e3e89ae926220911f",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "framemori",
+      "id": "presets",
+      "designSvg": "design/02-page-designs/screens/framemori/presets.svg",
+      "specMarkdown": "design/02-page-designs/specs/framemori/presets.md",
+      "gitBlobSha": "ea8363a055b82287704d221011e8a267913198ac",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "framemori",
+      "id": "preview",
+      "designSvg": "design/02-page-designs/screens/framemori/preview.svg",
+      "specMarkdown": "design/02-page-designs/specs/framemori/preview.md",
+      "gitBlobSha": "119a918dad946d9cefc3a3c9f15a2853a43fab83",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "framemori",
+      "id": "projects",
+      "designSvg": "design/02-page-designs/screens/framemori/projects.svg",
+      "specMarkdown": "design/02-page-designs/specs/framemori/projects.md",
+      "gitBlobSha": "6c9baff1ea3248cd80b6fba48158234afe29450b",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "framemori",
+      "id": "settings",
+      "designSvg": "design/02-page-designs/screens/framemori/settings.svg",
+      "specMarkdown": "design/02-page-designs/specs/framemori/settings.md",
+      "gitBlobSha": "795c36340f202d897595709866a418af08ca7bce",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "framemori",
+      "id": "stability",
+      "designSvg": "design/02-page-designs/screens/framemori/stability.svg",
+      "specMarkdown": "design/02-page-designs/specs/framemori/stability.md",
+      "gitBlobSha": "ecdae9c1ba58576f9adb85db161001826b00e262",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "framemori",
+      "id": "timeline",
+      "designSvg": "design/02-page-designs/screens/framemori/timeline.svg",
+      "specMarkdown": "design/02-page-designs/specs/framemori/timeline.md",
+      "gitBlobSha": "59c79443c71cadc09138ed00ec1160995103e2a2",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "lightbearing",
+      "id": "calendar",
+      "designSvg": "design/02-page-designs/screens/lightbearing/calendar.svg",
+      "specMarkdown": "design/02-page-designs/specs/lightbearing/calendar.md",
+      "gitBlobSha": "3f32582c26e4b9c0a0e41ca68fe10c5ee1ac2838",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "lightbearing",
+      "id": "compare",
+      "designSvg": "design/02-page-designs/screens/lightbearing/compare.svg",
+      "specMarkdown": "design/02-page-designs/specs/lightbearing/compare.md",
+      "gitBlobSha": "ccae39c238c6b89f688f1cef91456d399d78ab22",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "lightbearing",
+      "id": "compass",
+      "designSvg": "design/02-page-designs/screens/lightbearing/compass.svg",
+      "specMarkdown": "design/02-page-designs/specs/lightbearing/compass.md",
+      "gitBlobSha": "e6d86ae91f9e22998f5e732741660105a275eea1",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "lightbearing",
+      "id": "home",
+      "designSvg": "design/02-page-designs/screens/lightbearing/home.svg",
+      "specMarkdown": "design/02-page-designs/specs/lightbearing/home.md",
+      "gitBlobSha": "b8650e890a9650d19af5f5eaf2aa605e8c69b98f",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "lightbearing",
+      "id": "locations",
+      "designSvg": "design/02-page-designs/screens/lightbearing/locations.svg",
+      "specMarkdown": "design/02-page-designs/specs/lightbearing/locations.md",
+      "gitBlobSha": "81ccd93d374ca7f70e2c82392a26b75022059ccc",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "lightbearing",
+      "id": "map",
+      "designSvg": "design/02-page-designs/screens/lightbearing/map.svg",
+      "specMarkdown": "design/02-page-designs/specs/lightbearing/map.md",
+      "gitBlobSha": "49fb5a2759f3e58f6f53d54ac3a1bf748f761da4",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "lightbearing",
+      "id": "placeDetail",
+      "designSvg": "design/02-page-designs/screens/lightbearing/placeDetail.svg",
+      "specMarkdown": "design/02-page-designs/specs/lightbearing/placeDetail.md",
+      "gitBlobSha": "2516313487ba8f27b5fbcb937109c9d4eb62f2dd",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "lightbearing",
+      "id": "planDetail",
+      "designSvg": "design/02-page-designs/screens/lightbearing/planDetail.svg",
+      "specMarkdown": "design/02-page-designs/specs/lightbearing/planDetail.md",
+      "gitBlobSha": "f3958fdb0fee447d445005ac0a2dac4cb8528cf7",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "lightbearing",
+      "id": "planner",
+      "designSvg": "design/02-page-designs/screens/lightbearing/planner.svg",
+      "specMarkdown": "design/02-page-designs/specs/lightbearing/planner.md",
+      "gitBlobSha": "fcd1258699e1fdf45e238955f0453bffa258a30c",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "lightbearing",
+      "id": "reverse",
+      "designSvg": "design/02-page-designs/screens/lightbearing/reverse.svg",
+      "specMarkdown": "design/02-page-designs/specs/lightbearing/reverse.md",
+      "gitBlobSha": "29e27d446a1396e160c14746de0c16f54f9edecc",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "lightbearing",
+      "id": "settings",
+      "designSvg": "design/02-page-designs/screens/lightbearing/settings.svg",
+      "specMarkdown": "design/02-page-designs/specs/lightbearing/settings.md",
+      "gitBlobSha": "56a2c97ef6661d35bd3d9b63481e83d8d6eee346",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "lightbearing",
+      "id": "sunpath",
+      "designSvg": "design/02-page-designs/screens/lightbearing/sunpath.svg",
+      "specMarkdown": "design/02-page-designs/specs/lightbearing/sunpath.md",
+      "gitBlobSha": "c793baa77fab6d6cd3a74fee1934af6bf0f7283f",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "macroloom",
+      "id": "actions",
+      "designSvg": "design/02-page-designs/screens/macroloom/actions.svg",
+      "specMarkdown": "design/02-page-designs/specs/macroloom/actions.md",
+      "gitBlobSha": "f71a7cd7d9d4b290e602d99446a08eee94b496c9",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "macroloom",
+      "id": "activity",
+      "designSvg": "design/02-page-designs/screens/macroloom/activity.svg",
+      "specMarkdown": "design/02-page-designs/specs/macroloom/activity.md",
+      "gitBlobSha": "84d401d157d1a4a7f12545fd5d79b43493f0cfa8",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "macroloom",
+      "id": "deck",
+      "designSvg": "design/02-page-designs/screens/macroloom/deck.svg",
+      "specMarkdown": "design/02-page-designs/specs/macroloom/deck.md",
+      "gitBlobSha": "5bdca2abed553366b44fc06ece801fc9d48322b0",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "macroloom",
+      "id": "designer",
+      "designSvg": "design/02-page-designs/screens/macroloom/designer.svg",
+      "specMarkdown": "design/02-page-designs/specs/macroloom/designer.md",
+      "gitBlobSha": "0b71acb8756bd8b4eb7dc913f84826ccc8a2d35c",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "macroloom",
+      "id": "devices",
+      "designSvg": "design/02-page-designs/screens/macroloom/devices.svg",
+      "specMarkdown": "design/02-page-designs/specs/macroloom/devices.md",
+      "gitBlobSha": "36a44c62526d9244ac83149c28e52859528227de",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "macroloom",
+      "id": "diagnostics",
+      "designSvg": "design/02-page-designs/screens/macroloom/diagnostics.svg",
+      "specMarkdown": "design/02-page-designs/specs/macroloom/diagnostics.md",
+      "gitBlobSha": "36164212239b028e413c754d7023d3bdc361dd23",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "macroloom",
+      "id": "home",
+      "designSvg": "design/02-page-designs/screens/macroloom/home.svg",
+      "specMarkdown": "design/02-page-designs/specs/macroloom/home.md",
+      "gitBlobSha": "a41332cd880d0a21cb76201503ead53732ee0b30",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "macroloom",
+      "id": "macros",
+      "designSvg": "design/02-page-designs/screens/macroloom/macros.svg",
+      "specMarkdown": "design/02-page-designs/specs/macroloom/macros.md",
+      "gitBlobSha": "da67b0f6fd5932348d2b0754b0a98737d7b550df",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "macroloom",
+      "id": "pair",
+      "designSvg": "design/02-page-designs/screens/macroloom/pair.svg",
+      "specMarkdown": "design/02-page-designs/specs/macroloom/pair.md",
+      "gitBlobSha": "c144ffae3afc5325742d3475e3c48cce7441db28",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "macroloom",
+      "id": "settings",
+      "designSvg": "design/02-page-designs/screens/macroloom/settings.svg",
+      "specMarkdown": "design/02-page-designs/specs/macroloom/settings.md",
+      "gitBlobSha": "caf5001e68ebdf5ca55fbf112621bc941c86476f",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "voxcarve",
+      "id": "captions",
+      "designSvg": "design/02-page-designs/screens/voxcarve/captions.svg",
+      "specMarkdown": "design/02-page-designs/specs/voxcarve/captions.md",
+      "gitBlobSha": "9a459af839a468837687ac447a408fe2aad7e8cb",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "voxcarve",
+      "id": "export",
+      "designSvg": "design/02-page-designs/screens/voxcarve/export.svg",
+      "specMarkdown": "design/02-page-designs/specs/voxcarve/export.md",
+      "gitBlobSha": "97114d6a59f51fb51a7f2507921fa25d54de4fc4",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "voxcarve",
+      "id": "history",
+      "designSvg": "design/02-page-designs/screens/voxcarve/history.svg",
+      "specMarkdown": "design/02-page-designs/specs/voxcarve/history.md",
+      "gitBlobSha": "785e80b5e523a392581c32840486fa0d1d418292",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "voxcarve",
+      "id": "import",
+      "designSvg": "design/02-page-designs/screens/voxcarve/import.svg",
+      "specMarkdown": "design/02-page-designs/specs/voxcarve/import.md",
+      "gitBlobSha": "16def8c322f4ee0216c56727e41e0acc97cbefb1",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "voxcarve",
+      "id": "preview",
+      "designSvg": "design/02-page-designs/screens/voxcarve/preview.svg",
+      "specMarkdown": "design/02-page-designs/specs/voxcarve/preview.md",
+      "gitBlobSha": "f5e37a5b809937fee5b1b0403b2be07a70149ae9",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "voxcarve",
+      "id": "projects",
+      "designSvg": "design/02-page-designs/screens/voxcarve/projects.svg",
+      "specMarkdown": "design/02-page-designs/specs/voxcarve/projects.md",
+      "gitBlobSha": "cd1c3a8c5eddf6bbcf0de484dac3c1e651f36043",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "voxcarve",
+      "id": "settings",
+      "designSvg": "design/02-page-designs/screens/voxcarve/settings.svg",
+      "specMarkdown": "design/02-page-designs/specs/voxcarve/settings.md",
+      "gitBlobSha": "9bb47dceadd6f4fc59818ca26b803b2f92621a83",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "voxcarve",
+      "id": "silence",
+      "designSvg": "design/02-page-designs/screens/voxcarve/silence.svg",
+      "specMarkdown": "design/02-page-designs/specs/voxcarve/silence.md",
+      "gitBlobSha": "48fe68bb6ab74d8f91adbe3cf6f94c1ac9efaa08",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "voxcarve",
+      "id": "timeline",
+      "designSvg": "design/02-page-designs/screens/voxcarve/timeline.svg",
+      "specMarkdown": "design/02-page-designs/specs/voxcarve/timeline.md",
+      "gitBlobSha": "c426edb67bb5d576cde3720d047f6d5db8f6f555",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    },
+    {
+      "app": "voxcarve",
+      "id": "transcript",
+      "designSvg": "design/02-page-designs/screens/voxcarve/transcript.svg",
+      "specMarkdown": "design/02-page-designs/specs/voxcarve/transcript.md",
+      "gitBlobSha": "afd984b43ed1a994bd18683690e115a018e3adb5",
+      "screenSize": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "DESIGN_DRAFT",
+      "businessData": "DEMO_ONLY"
+    }
+  ]
+}
