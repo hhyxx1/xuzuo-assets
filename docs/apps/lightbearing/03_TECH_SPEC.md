@@ -1,8 +1,10 @@
 # 逐光 / LightBearing · 技术架构与 API26 实施规格
 
-> Xuzuo Studio · API 26 only · v0.1 草案，等待用户审核；不代表编译验证。
+> Xuzuo Studio · API 26 only · v0.3 草案，等待用户审核；不代表编译验证。
 
 **应用**：逐光 / LightBearing · **Bundle**：`com.hhyxx.LightBearing` · **代码仓库**：https://github.com/hhyxx1/LightBearing。
+
+**仓库事实已复核**：`main@5468b4d` 与 `fix/core-quality-audit@e89b026`（2026-11-12 核查）。fix 分支存在 `ObservationPanel.ets`、`Charts.ets`、`HomePage.ets`、`design/ui1b-r2/final-home.html`；真实 AGC 注册信息须在修改/签名前与后台确认。参见 [包名及验证登记](../../03_PACKAGE_AND_RELEASE_REGISTRY.md)。
 
 ## 1. 技术基线与工程边界
 
