@@ -1,8 +1,10 @@
 # 店图匠 / StoroPix · UI / UX 完整设计规格
 
-> Xuzuo Studio · API 26 only · v0.1 草案，等待用户审核；不代表编译验证。
+> Xuzuo Studio · API 26 only · v0.3 草案，等待用户审核；不代表编译验证。
 
-**应用**：店图匠 / StoroPix · **Bundle**：`com.hhyxx1.storopix` · **代码仓库**：（待创建独立仓库）。
+**应用**：店图匠 / StoroPix · **Bundle**：`com.hhyxx.storopix` · **代码仓库**：https://github.com/hhyxx1/storopix。
+
+**现有界面优先**：这是一份对 [已存在的 StoroPix 原生应用](https://github.com/hhyxx1/storopix) 的候选视觉改造规范，不是已上线界面逐屏复刻。实施前需对照现有 `DESIGN.md` 与 `documents/prototypes/studio-redesign/`、真机截图及现有工作流，保留可用交互和用户数据。不因统一系列风格破坏高频批量出图效率。
 
 ## 1. 视觉身份
 
