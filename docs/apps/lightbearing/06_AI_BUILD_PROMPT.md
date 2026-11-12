@@ -64,3 +64,12 @@ R2 HTML 是设计预览，不是已部署生产页面；先将真实首页与 R2
 ```
 
 **注意**：这是一份供编程 AI 执行的任务书，不等于本仓库已经包含编译后的 App。
+
+## v1.0 设计源文件与复用组件执行补充（优先于旧式 UI 外观描述）
+
+1. **实施必须先读**：`design/README.md`、`design/03-design-system/tokens/tokens.json`、`design/03-design-system/components/COMPONENT_SPEC.md`、`design/02-page-designs/indexes/lightbearing.md`，逐页读取 `specs/lightbearing/<route>.md` 与对应 SVG。
+2. **共享组件要真复用**：基础 `XzPageShell`、`XzTopBar`、`XzCard`、`XzPrimaryButton`、`XzListCell`、`XzBottomNav` 等采用独立可复用模块；Token 统一来源，不能在四款代码中复制四套不一致的 Button/Card 样式。
+3. **视觉权威**：本四层设计是新视觉稿；不能直接沿用旧 HTML/UI 元素或设计稿中虚构的数值。设计 SVG 仅用于视效对照，实际 UI 用原生 ArkUI 重建。
+4. **当前版本是设计文件**：`DESIGN_DRAFT` 与编译/真机验收应分开报告，不能把静态预览当作已运行结果。
+5. **逐光特殊限制**：明确禁止以旧 HomePage/ObservationPanel/Charts 或 R2 HTML 的视觉布局为参照重新排版。可以继续使用、回归测试其太阳计算、时区与本地数据，不需重写算法。
+

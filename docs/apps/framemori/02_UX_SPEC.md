@@ -4,6 +4,14 @@
 
 **应用**：帧间 / FrameMori · **Bundle**：`com.hhyxx.framemori` · **代码仓库**：（待创建独立仓库）。
 
+
+## v1.0 四层设计交付映射（2026-11-12）
+
+- **所有页面的新视觉权威来源**：[设计交付总入口](../../../design/README.md)、[42 页画廊](../../../design/02-page-designs/README.md)、[共享组件合同](../../../design/03-design-system/components/COMPONENT_SPEC.md)、[统一 Token](../../../design/03-design-system/tokens/tokens.json)。本文件 S01…Sxx 保留**业务需求/页面路由/验收场景**地位；与新增 SVG 在视觉、导航布局、视觉组件结构冲突时，以新 `design/` 交付为准。
+- 该产品的 [逐页设计索引](../../../design/02-page-designs/indexes/framemori.md) 与 `design/02-page-designs/specs/framemori/` 为页面级组件/事件/状态合同。
+- LightBearing、FrameMori、VoxCarve、MacroLoom 只共用基础 UI 组件和 token；各自相机/太阳图表/波形/宏按钮必须以原生业务组件实现，不使用静态 SVG 当真实数据结果。
+- 用户已经批准这四款采取同一视觉语言并开始设计资源制作，**不等于批准将 PNG/图标直接上架，也不等于编译通过**。
+
 ## 1. 视觉身份
 
 - 品牌方向：叠帧轮廓 + 播放缺口。

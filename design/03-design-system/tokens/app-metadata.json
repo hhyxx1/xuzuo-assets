@@ -1,0 +1,30 @@
+{
+  "lightbearing": {
+    "name": "LightBearing / 逐光",
+    "a": "#FFBC6B",
+    "b": "#73D9D5",
+    "id": "com.hhyxx.LightBearing",
+    "domain": "太阳观测、反向寻光、机位与拍摄计划"
+  },
+  "framemori": {
+    "name": "FrameMori / 帧间",
+    "a": "#FF9471",
+    "b": "#75DDC4",
+    "id": "com.hhyxx.framemori",
+    "domain": "定格拍摄、逐帧调整、时间轴与导出"
+  },
+  "voxcarve": {
+    "name": "VoxCarve / 声剪",
+    "a": "#AF9DFF",
+    "b": "#FDBF92",
+    "id": "com.hhyxx.voxcarve",
+    "domain": "导入、转写、波形编辑、停顿复核与字幕导出"
+  },
+  "macroloom": {
+    "name": "MacroLoom / 键阵",
+    "a": "#B3F07C",
+    "b": "#7FC8FF",
+    "id": "com.hhyxx.macroloom",
+    "domain": "设备配对、控制面板、宏动作与执行审计"
+  }
+}

@@ -1,10 +1,10 @@
-# 帧间 / FrameMori · 素材制作需求清单（暂不生成）
+# 帧间 / FrameMori · 素材制作需求与首轮交付状态
 
 > Xuzuo Studio · API 26 only · v0.3 草案，等待用户审核；不代表编译验证。
 
 **应用**：帧间 / FrameMori · **Bundle**：`com.hhyxx.framemori` · **代码仓库**：（待创建独立仓库）。
 
-**阶段：`AWAITING_APPROVAL`。本文件仅是设计需求，禁止在审核前调用生图或把生成文件上传到仓库。**
+**阶段：`DESIGN_DRAFT`**。用户已经授权四款素材的**首轮设计制作与入库**，现有 [framemori 独立 SVG 素材目录](../../../design/04-assets/README.md) 和 [清单](../../../design/04-assets/manifests/assets.json) 可供审核。**素材终稿、HAP 集成及上架资源使用仍未批准；本轮所有生产编译/真机检查未执行。**
 
 ## 1. 方向与色彩
 
@@ -12,7 +12,7 @@
 - 图标形状：叠帧轮廓 + 播放缺口。所有小尺寸导出均检查 48px 识别度。
 - 画风：精致、专业、简洁；允许场景感，但 UI 内图片不能盖住真实数据。
 
-## 2. 后续候选素材及用途
+## 2. 原始候选素材需求（下表保留历史目标；本轮矢量源稿采用抽象画风，不自动等同于写实方案）
 
 | Asset ID | 内容概要 | 规格方向 | 约束与审稿要点 | 本阶段 |
 | --- | --- | --- | --- | --- |
@@ -21,6 +21,16 @@
 | A03 `empty-projects` | 等待拍摄的小黏土角色与胶片框 | 轻量插画 | 对象可以是原创通用造型 | 计划，未生成 |
 | A04 `export-success` | 短暂庆祝性帧序列视觉 | 小插画或 Lottie 后续评估 | 不替代真实文件结果 | 计划，未生成 |
 | A05 `store-covers` | 积木/手作的创作场景 | 应用市场横竖图 | 不要含第三方品牌 Logo | 计划，未生成 |
+
+
+### 本轮实际独立资源与原需求差异
+
+- [图标 SVG](../../../design/04-assets/app-icons/framemori.svg) + [256px PNG 预览](../../../design/04-assets/exports/app-icons/framemori-preview-256.png)：首轮设计稿，非最终商店图标。
+- [引导 01](../../../design/04-assets/onboarding/framemori-01.svg)、[02](../../../design/04-assets/onboarding/framemori-02.svg)、[03](../../../design/04-assets/onboarding/framemori-03.svg)：三套抽象矢量概念，未制作摄影写实或具体人物场景。
+- [first-use 空态](../../../design/04-assets/empty-states/framemori-first-use.svg)、[no-results 空态](../../../design/04-assets/empty-states/framemori-no-results.svg)、[unsupported 空态](../../../design/04-assets/empty-states/framemori-unsupported.svg)：统一风格的独立插画，正式 App 文字/CTA 仍由 ArkUI 渲染。
+- [分享背景](../../../design/04-assets/share/framemori-share-bg.svg) 与 [功能插画目录](../../../design/04-assets/feature/)：可编辑 SVG 源件；没有真实业务数据；应用市场真实运行截图仍待上线版本生成。
+
+**当前未完成的原需求**：需要真实项目截图的应用市场成品、需要摄影写实场景的指定插画、实际图像体积/DPR/设备端验收。不能把已存在的抽象 SVG 自动宣称与所有原表格条目完全一致。
 
 ## 3. 素材在 App 中的落点
 
