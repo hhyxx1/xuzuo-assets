@@ -1,7 +1,8 @@
 import type { AppSpec, BlockSpec, PageSpec, PreviewState } from './types.js';
 
+const HTML_ESCAPES: Record<string, string> = {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'};
 function h(value: string | number | undefined): string {
-  return String(value ?? '').replace(/[&<>"']/g, (x: string) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x] || x));
+  return String(value ?? '').replace(/[&<>"']/g, (x: string): string => HTML_ESCAPES[x] || x);
 }
 function icon(i: number): string {
   const icons: string[] = ['◈','◉','⌁','▣','✦','◎','⊞','⌘','◌','▤','⌖','⚙'];
