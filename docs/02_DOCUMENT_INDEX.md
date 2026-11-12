@@ -1,5 +1,7 @@
 # 文档目录 / Document Index
 
+- **[已注册包名、发布版本与来源登记](03_PACKAGE_AND_RELEASE_REGISTRY.md)**
+
 ## 逐光 / LightBearing
 
 - [PRD](apps/lightbearing/01_PRODUCT_PRD.md)
