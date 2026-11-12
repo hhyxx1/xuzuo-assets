@@ -1,6 +1,6 @@
 # 逐光 / LightBearing · 面向编程 AI 的完整执行指令
 
-> Xuzuo Studio · API 26 only · v0.1 草案，等待用户审核；不代表编译验证。
+> Xuzuo Studio · API 26 only · v0.3 草案，等待用户审核；不代表编译验证。
 
 **应用**：逐光 / LightBearing · **Bundle**：`com.hhyxx.LightBearing` · **代码仓库**：https://github.com/hhyxx1/LightBearing。
 
@@ -8,7 +8,7 @@
 
 ```text
 你是 HarmonyOS 7 / API 26 原生应用高级工程师，负责完整开发「逐光 / LightBearing」。
-唯一应用标识：com.hhyxx.LightBearing。
+唯一应用标识：com.hhyxx.LightBearing（与现有 AppScope 配置逐字一致；禁止擅自大小写转换；任何 AGC 注册/发布动作再次与后台核验）。
 先阅读以下全部文件，并把它们作为统一的实现与验收合同：
 - docs/shared/BRAND_SYSTEM.md
 - docs/shared/UI_DESIGN_SYSTEM.md
