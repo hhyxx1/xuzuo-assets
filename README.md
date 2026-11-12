@@ -1,10 +1,12 @@
 # 序作 Studio · 品牌、设计与应用开发资料库
 
-> **版本：v0.2 审阅草案｜日期：2026-11-12｜状态：待用户确认（DRAFT_FOR_REVIEW）**
+> **版本：v0.3 审阅草案｜日期：2026-11-12｜状态：待用户确认（DRAFT_FOR_REVIEW）**
 >
 > **本仓库定位：** Xuzuo Studio 系列应用的跨项目产品文档、设计规范及未来品牌素材库。不是将五款 App 源码混合在一起的工程。当前**只提交文档，不含新素材、应用代码或真实用户数据**。
 
 ## 从这里开始
+
+- **[已注册包名与版本来源登记](docs/03_PACKAGE_AND_RELEASE_REGISTRY.md)**：已上线产品与未注册候选的身份对照；严禁按 GitHub 用户名猜包名。
 
 - **[审阅入口：按顺序查看与记录待决事项](docs/00_START_HERE.md)**
 - [五款产品定位与依赖地图](docs/01_PORTFOLIO_MAP.md)
@@ -31,11 +33,13 @@
 | **帧间 FrameMori** | 定格动画拍摄、逐帧编辑与视频导出 | [七篇文档](docs/apps/framemori/README.md) |
 | **声剪 VoxCarve** | 语音转写与文字驱动的音频剪辑 | [七篇文档](docs/apps/voxcarve/README.md) |
 | **键阵 MacroLoom** | HarmonyOS 控制 Windows 快捷操作 | [七篇文档](docs/apps/macroloom/README.md) |
-| **店图匠 StoroPix** | 商品图片修图、批量处理和导出 | [七篇文档](docs/apps/storopix/README.md) |
+| **店图匠 StoroPix** | **已上架 0.2.0（开发者确认）**；现有商品图批量处理应用，后续增量优化 | [七篇文档](docs/apps/storopix/README.md) |
 
 每款均含：产品 PRD、页面与交互规范、技术架构、验收矩阵、素材需求清单、AI 开发任务书、导航 README。
 
 ## 重要约束
+
+- **现有 StoroPix 源码包名是 `com.hhyxx.storopix`，并非 `com.hhyxx1.storopix`**；[源码](https://github.com/hhyxx1/storopix) `AppScope/app.json5` 与其 README 已核对，后续不得修改已注册应用身份。
 
 - **LightBearing 现有 AGC 注册 Bundle Name：`com.hhyxx.LightBearing`**。不得按早期 PRD 擅自改成全小写。已有 [源码仓库](https://github.com/hhyxx1/LightBearing) 与 `fix/core-quality-audit` 质量审计分支；本库只管理该应用的设计开发文档，不覆盖业务代码。
 - 目标基线 **HarmonyOS 7 / API 26（26.0.0 Release）**；华为官方于 2026-08-29 发布 [SDK 26.0.0 Release](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-2600/)。每项高风险接口、编解码与设备能力仍需单独核验。
