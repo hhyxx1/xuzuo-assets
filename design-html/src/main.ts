@@ -62,7 +62,7 @@ function showToast(message: string): void {
 document.addEventListener('click', (event: MouseEvent) => {
   const target: EventTarget | null = event.target;
   if (!(target instanceof Element)) return;
-  const element: HTMLElement | null = target.closest('[data-act]');
+  const element: HTMLElement | null = target.closest<HTMLElement>('[data-act]');
   if (!element) return;
   const act: string = element.dataset.act || '';
   if (act==='app') {
