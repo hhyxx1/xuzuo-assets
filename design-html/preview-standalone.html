@@ -1,0 +1,3213 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0B1622">
+<title>序作 Studio · 四款 HarmonyOS 应用交互设计稿</title>
+<style>
+:root{font-family:"HarmonyOS Sans SC","HarmonyOS Sans","Noto Sans SC","PingFang SC",system-ui,sans-serif;color-scheme:dark;--bg:#0B1622;--surface:#152836;--elevated:#1C3546;--text:#F9FAF3;--muted:#93A9B6;--line:rgba(163,195,211,.16);--accent:#FFBC6B;--accent2:#73D9D5;--glow:rgba(255,188,107,.19);--radius:20px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -30%,#1c3b5d 0,transparent 50%),#070e18;color:var(--text);min-width:320px}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}a{color:inherit}.boot{padding:30vh;text-align:center}
+.workspace{display:grid;grid-template-columns:248px minmax(360px,1fr) 280px;min-height:100vh}.sidebar{background:#0a1421;border-right:1px solid var(--line);padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto}.brand{display:flex;gap:11px;align-items:center;margin:3px 7px 26px}.mark{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(145deg,#ffbc6b,#73d9d5 58%,#af9dff);font-weight:900;color:#101827;font-size:23px}.brand strong{display:block;font-size:19px;letter-spacing:.02em}.brand small,.section-caption,.page-sub,.muted{color:var(--muted)}.brand small{font-size:11px;display:block;margin-top:2px}.section-caption{font-size:11px;letter-spacing:.13em;font-weight:700;padding:0 10px;margin:20px 0 10px;text-transform:uppercase}.app-choice{width:100%;display:flex;align-items:center;text-align:left;gap:12px;background:transparent;color:var(--text);border:1px solid transparent;padding:10px 11px;border-radius:15px;margin:5px 0;transition:.18s}.app-choice:hover,.app-choice.active{background:#172c3d;border-color:var(--line)}.app-symbol{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;flex-shrink:0;color:#08131e;font-weight:900;background:var(--app-accent)}.app-choice span strong{display:block;font-size:13px}.app-choice span small{display:block;font-size:10px;color:var(--muted);margin-top:3px}.screen-link{width:100%;display:flex;align-items:center;gap:8px;background:transparent;border:0;color:#a5baca;text-align:left;padding:10px 12px;border-radius:10px;font-size:12px}.screen-link:hover,.screen-link.active{background:rgba(255,255,255,.065);color:#fff}.screen-link.active:before{content:"";width:4px;height:16px;border-radius:3px;background:var(--accent);margin-left:-8px}.screen-link .num{font-size:10px;color:#6e8598;font-variant-numeric:tabular-nums}.sidebar-bottom{margin:24px 8px;color:#7b92a3;font-size:11px;line-height:1.8}
+.stage{min-width:0;padding:24px 30px 54px}.stage-head{display:flex;gap:20px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:20px}.stage-head h1{margin:0;font-size:24px;letter-spacing:-.025em}.stage-head p{margin:5px 0 0;color:var(--muted);font-size:12px}.controls{display:flex;gap:9px;align-items:center}.select,.toolbar-btn{border:1px solid var(--line);background:#162535;border-radius:11px;color:#d8e9f1;padding:8px 12px;font-size:12px}.toolbar-btn:hover,.select:hover{border-color:var(--accent)}.stage-content{display:flex;justify-content:center;align-items:flex-start;gap:30px}.phone{--phone-width:390px;width:var(--phone-width);min-width:280px;flex-shrink:0;border:7px solid #293d51;background:var(--bg);border-radius:42px;box-shadow:0 40px 100px rgba(0,0,0,.44),0 0 0 1px #8093a955,0 0 70px var(--glow);overflow:hidden;position:relative;transition:width .25s}.phone-top{height:34px;display:flex;justify-content:space-between;align-items:center;padding:0 22px;font-size:11px;font-variant-numeric:tabular-nums;background:#0b1622}.phone-top:after{content:"▴▴  WiFi  ▰";letter-spacing:1px;color:#d5e2e9}.app-surface{min-height:760px;max-height:820px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#50677a transparent;background:radial-gradient(ellipse at 80% -10%,var(--glow),transparent 54%),#0B1622}.app-header{padding:15px 18px 12px;display:flex;justify-content:space-between;align-items:center;gap:10px}.app-header h2{font-size:19px;margin:0;font-weight:750;letter-spacing:-.035em}.app-header .eyebrow{color:var(--accent);font-size:10px;letter-spacing:.12em;margin-bottom:5px}.app-action{border:1px solid var(--line);border-radius:12px;background:#223647;padding:8px;color:#e6f1f3;min-width:34px}.app-top-actions{display:flex;gap:6px}.app-subline{padding:0 18px 12px;font-size:11px;color:var(--muted)}.screen-body{padding:2px 14px 30px;display:flex;flex-direction:column;gap:12px}.panel{border:1px solid var(--line);border-radius:19px;background:linear-gradient(150deg,rgba(35,59,76,.98),rgba(18,37,51,.95));box-shadow:inset 0 1px 0 #ffffff0d;overflow:hidden}.panel-pad{padding:16px}.panel-title{font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;justify-content:space-between;margin-bottom:12px}.panel-title small{font-weight:400;font-size:10px;color:var(--muted)}.hero{position:relative;min-height:196px;padding:22px 20px;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;overflow:hidden}.hero:before{position:absolute;inset:0;content:"";z-index:-1;background:linear-gradient(180deg,transparent 15%,#04101de8),radial-gradient(circle at 72% 35%,#ffdc8d 0 3%,#efa253 3.5%,#a65a43 9%,transparent 28%),linear-gradient(155deg,#203552 8%,#567b94 34%,#ffad68 63%,#1a3553 90%)}.hero:after{content:"";position:absolute;z-index:-1;inset:auto -2% 0;height:55%;background:linear-gradient(158deg,transparent 43%,#071722 44% 55%,transparent 56%),linear-gradient(175deg,transparent 55%,#0a2530 56%);opacity:.8}.hero .kicker{font-size:11px;color:#ffe5b8;letter-spacing:.12em}.hero h3{font-size:25px;line-height:1.25;margin:6px 0}.hero p{font-size:11px;margin:0;color:#e9ddcf}.hero-btn{align-self:flex-start;margin-top:14px;background:var(--accent);color:#12202b;border:0;border-radius:10px;padding:9px 15px;font-weight:700;font-size:11px}.chiprow{display:flex;gap:7px;flex-wrap:wrap}.chip{border:1px solid var(--line);border-radius:999px;padding:6px 10px;color:#d8e9ed;font-size:10px;background:#1d3142}.chip.active{background:var(--accent);border-color:var(--accent);color:#11222b;font-weight:700}.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.metric{background:#11293b;padding:14px;border:1px solid var(--line);border-radius:14px}.metric label{font-size:10px;color:#99b1bd;display:block}.metric strong{font-size:23px;display:block;margin:6px 0 3px;font-weight:650;letter-spacing:-.04em;color:#f8f4eb}.metric small{font-size:10px;color:var(--accent2)}.chart{padding:15px}.chart svg{display:block;width:100%;height:142px;overflow:visible}.chart .grid{stroke:#ffffff20;stroke-width:1}.chart .line{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round}.chart .area{fill:var(--glow)}.chart-labels{display:flex;justify-content:space-between;color:#829bad;font-size:10px}.timeline{display:flex;align-items:center;gap:3px;padding:8px 0}.timeline .bar{flex:1;height:14px;background:linear-gradient(90deg,#456aa0,var(--accent2),var(--accent),#ffad80,#516c98);border-radius:100px;position:relative}.timeline .tick{position:absolute;top:-6px;width:3px;height:26px;background:white;border-radius:2px;left:56%;box-shadow:0 0 7px var(--accent)}.timeline-labels{display:flex;justify-content:space-between;font-size:10px;color:#aabfca}.list{display:flex;flex-direction:column;gap:8px}.list-row{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:13px;background:#142b3b;padding:11px;min-height:56px}.row-icon{display:grid;place-items:center;width:35px;height:35px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#11212c;font-weight:800;flex-shrink:0}.list-row .copy{min-width:0;flex:1}.list-row strong{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.list-row small{display:block;font-size:10px;margin-top:4px;color:var(--muted)}.chevron{color:#8fa8b8}.pillbar{display:flex;gap:6px;padding:4px;border:1px solid var(--line);border-radius:13px;background:#0c2232}.pillbar button{border:0;background:transparent;color:#93b0be;flex:1;font-size:11px;padding:8px;border-radius:9px}.pillbar button.active{background:var(--accent);color:#0b1a28;font-weight:700}.field{margin-bottom:10px}.field label{display:block;font-size:10px;color:var(--muted);margin-bottom:6px}.field input,.field select{width:100%;border:1px solid var(--line);border-radius:10px;background:#0c2030;color:var(--text);padding:11px;font-size:12px}.primary{width:100%;border:0;border-radius:12px;background:linear-gradient(105deg,var(--accent),var(--accent2));padding:13px 18px;color:#09202b;font-size:12px;font-weight:800}.secondary{border:1px solid var(--line);background:#183246;border-radius:12px;padding:10px 13px;color:#e9f1ef;font-size:11px}.action-row{display:flex;gap:8px}.action-row button{flex:1}.toggle{width:37px;height:21px;border-radius:30px;border:1px solid var(--line);background:#466071;position:relative}.toggle.on{background:var(--accent)}.toggle:after{content:"";width:15px;height:15px;position:absolute;top:2px;left:2px;border-radius:50%;background:white;transition:.2s}.toggle.on:after{left:18px}.settings-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);gap:12px}.settings-row:last-child{border:0}.settings-row span{font-size:12px}.settings-row small{font-size:10px;color:var(--muted)}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.tile{border:1px solid var(--line);background:linear-gradient(140deg,#24485d,#133042);color:#f1f9f8;border-radius:14px;min-height:80px;padding:14px 8px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:9px;text-align:center;font-size:11px}.tile .glyph{font-size:23px;color:var(--accent)}.tile.selected{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.day{padding:10px 1px;min-width:0;border:1px solid transparent;border-radius:9px;color:#d7e9f0;text-align:center;font-size:11px;background:#163040}.day.weekday{background:none;font-size:9px;color:var(--muted)}.day.selected{border-color:var(--accent);color:var(--accent);background:#3c362b}.day b{display:block;font-size:14px}.day em{font-size:8px;font-style:normal;display:block;color:var(--accent2);margin-top:3px}.camera-viewport{height:220px;background:radial-gradient(circle at 65% 28%,#f0b77a 0 6%,transparent 7%),linear-gradient(160deg,#304965 0,#68858e 40%,#303c38 63%,#152d31 100%);position:relative;border-radius:13px;overflow:hidden}.camera-viewport:before{content:"";position:absolute;inset:18%;border:1px solid #fff7;box-shadow:0 0 0 80px #07131d55}.camera-viewport:after{content:"";position:absolute;top:50%;left:0;right:0;border-top:1px dashed #ffffff70}.camera-viewport .frame-figure{font-size:80px;position:absolute;bottom:28px;left:calc(50% - 40px);filter:drop-shadow(0 15px 13px #0009)}.filmstrip{display:flex;gap:5px;overflow:hidden}.frame{width:37px;height:46px;border:1px solid #7896a066;border-radius:7px;flex-shrink:0;background:linear-gradient(150deg,#596b75,#d5a074 60%,#243f42);display:grid;place-items:center;color:#f8d0a6}.frame.selected{border:2px solid var(--accent)}.waveform{display:flex;align-items:center;gap:2px;height:88px;background:#0b2235;border:1px solid var(--line);border-radius:10px;padding:12px}.waveform i{display:block;flex:1;background:var(--accent);border-radius:3px;min-width:2px;opacity:.84}.compact-waveform{height:46px}.progress{height:8px;background:#0c2232;border-radius:7px;overflow:hidden}.progress span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}.map{min-height:192px;border:1px solid #477086;border-radius:15px;background:radial-gradient(ellipse at 65% 40%,#247086 0%,transparent 35%),repeating-linear-gradient(22deg,transparent 0 38px,#ffffff1c 39px 40px),linear-gradient(145deg,#183b4a,#0d273e);position:relative;overflow:hidden}.map .pin{position:absolute;left:58%;top:41%;width:36px;height:36px;display:grid;place-items:center;border-radius:50%;color:#0c2631;font-size:23px;background:var(--accent);box-shadow:0 0 0 13px #ffbb6a23,0 0 38px var(--accent)}.map .disclaimer{position:absolute;bottom:10px;left:12px;color:#b7d2dd;font-size:10px}.compass{width:190px;height:190px;border:2px solid #417385;border-radius:50%;margin:12px auto;position:relative;background:repeating-conic-gradient(from 0deg,#85c3c722 0deg 1deg,transparent 1deg 15deg),radial-gradient(circle,#20435b,#0e2434);box-shadow:0 0 40px var(--glow)}.compass:after{content:"";position:absolute;width:70px;height:5px;left:90px;top:92px;border-radius:4px;background:linear-gradient(90deg,#fff7,var(--accent));transform-origin:0 50%;transform:rotate(-28deg)}.compass span{position:absolute;font-size:11px;color:#c4dce6}.compass .n{left:90px;top:7px}.compass .e{right:8px;top:85px}.compass .s{left:92px;bottom:7px}.compass .w{left:10px;top:85px}.empty{padding:50px 25px;text-align:center}.empty b{display:block;font-size:15px;margin-top:15px}.empty p{color:var(--muted);font-size:12px;line-height:1.6}.empty .illus{font-size:70px;filter:drop-shadow(0 10px 20px var(--glow))}.skeleton{height:80px;border-radius:15px;background:linear-gradient(100deg,#183143,#294e60,#183143);background-size:200% 100%;animation:pulse 1.6s infinite}@keyframes pulse{to{background-position:-200% 0}}
+.bottom-nav{position:sticky;bottom:0;display:flex;align-items:center;justify-content:space-around;gap:2px;padding:12px 8px 14px;background:linear-gradient(180deg,#10283e,#0b1928);border-top:1px solid var(--line);z-index:10}.bottom-nav button{flex:1;border:0;background:transparent;color:#8ba7b8;font-size:10px;display:flex;align-items:center;flex-direction:column;gap:3px}.bottom-nav button span{font-size:16px}.bottom-nav button.active{color:var(--accent)}.sheet-backdrop{position:absolute;inset:0;background:#04121b91;display:flex;align-items:end;justify-content:center;z-index:20}.sheet{width:100%;background:#173247;border-radius:24px 24px 0 0;padding:22px;box-shadow:0 -25px 60px #0008}.sheet h3{margin:0 0 12px}.sheet p{font-size:12px;line-height:1.7;color:#d2e2e7}.toast{position:fixed;z-index:40;bottom:24px;left:50%;transform:translateX(-50%);background:#274657;border:1px solid var(--accent2);padding:13px 18px;border-radius:12px;box-shadow:0 20px 50px #0009;color:white;font-size:12px;max-width:90vw}.inspector{border-left:1px solid var(--line);background:#091522;padding:24px 18px;min-height:100vh}.inspector h3{font-size:14px;margin:0 0 6px}.inspector p{font-size:11px;color:var(--muted);line-height:1.7}.inspector-box{background:#152a3a;border:1px solid var(--line);border-radius:15px;padding:14px;margin:18px 0}.inspector-box h4{margin:0 0 12px;font-size:12px}.swatches{display:flex;gap:8px}.swatch{width:42px;height:42px;border-radius:10px;border:1px solid #ffffff30}.note{display:flex;gap:8px;line-height:1.6;color:#b4c9d1;font-size:11px;margin:9px 0}.note:before{content:"◆";color:var(--accent);font-size:9px}.spec-list{margin:0;padding-left:16px;color:#c6d9e1;font-size:11px;line-height:1.9}.demo-stamp{display:inline-block;border:1px dashed #7c9aaa77;border-radius:7px;padding:5px 8px;font-size:9px;color:#90bac7;margin-top:12px}.footer-hint{text-align:center;color:#6d8b9e;font-size:11px;margin:18px 0 0}
+[data-theme="light"]{--bg:#f4f1ea;--surface:#fff;--elevated:#e7edeb;--text:#14212a;--muted:#536670;--line:#bccdd0;--glow:rgba(255,188,107,.1)}[data-theme="light"] .phone,[data-theme="light"] .app-surface{background:#f4f1ea;color:#14212a}[data-theme="light"] .app-header,[data-theme="light"] .phone-top{background:#f4f1ea;color:#182632}[data-theme="light"] .panel{background:#fff}[data-theme="light"] .metric,[data-theme="light"] .list-row,[data-theme="light"] .field input,[data-theme="light"] .field select{background:#f1f5f4;color:#172a35}[data-theme="light"] .metric strong,[data-theme="light"] .list-row strong{color:#182632}[data-theme="light"] .secondary{background:#e8eeed;color:#243442}[data-theme="light"] .chip{background:#eff4f2;color:#243442}[data-theme="light"] .bottom-nav{background:#f2f6f5}[data-theme="light"] .hero{color:white}
+@media(max-width:1180px){.workspace{grid-template-columns:214px minmax(300px,1fr)}.inspector{display:none}.stage{padding:24px 16px}}@media(max-width:760px){.workspace{display:block}.sidebar{position:static;height:auto;padding:11px;display:block}.brand{margin:3px 4px 8px}.apps-strip{display:flex;overflow:auto;gap:4px}.app-choice{width:180px;flex-shrink:0}.sidebar .section-caption,.sidebar-bottom{display:none}.screen-nav{display:flex;overflow:auto}.screen-link{width:auto;white-space:nowrap;flex-shrink:0}.stage{padding:12px 0 26px}.stage-head{padding:0 14px}.stage-head h1{font-size:18px}.stage-content{padding:0 4px}.phone{width:min(100%,390px)!important;min-width:0;border-width:4px;border-radius:34px}.app-surface{max-height:none;min-height:630px}.controls{gap:4px}.select,.toolbar-btn{padding:7px;font-size:10px}}
+</style>
+</head>
+<body>
+<div id="app"><div class="boot">正在准备序作 Studio 设计预览…</div></div>
+<script>
+const COMMON_TOKENS = {
+  darkBackground: '#0B1622',
+  darkSurface: '#152836',
+  darkElevated: '#1C3546',
+  textPrimary: '#F9FAF3',
+  textSecondary: '#93A9B6',
+  lightBackground: '#F4F1EA',
+  spacing: [4, 8, 12, 16, 20, 24, 32],
+  radii: [8, 12, 16, 20, 28],
+  minimumTouchTargetVp: 48
+};
+const APP_COLORS = {
+  lightbearing: {primary:'#FFBC6B',secondary:'#73D9D5'},
+  framemori: {primary:'#FF9471',secondary:'#75DDC4'},
+  voxcarve: {primary:'#AF9DFF',secondary:'#FDBF92'},
+  macroloom: {primary:'#B3F07C',secondary:'#7FC8FF'}
+};
+
+/** 42 screens; generated browser version of src/data.ts. */
+const APPS = [
+  {
+    "id": "lightbearing",
+    "name": "LightBearing",
+    "cnName": "逐光",
+    "symbol": "☀",
+    "tagline": "规划光线，抵达好时刻",
+    "primary": "#FFBC6B",
+    "secondary": "#73D9D5",
+    "pages": [
+      {
+        "id": "home",
+        "title": "今日光线",
+        "subtitle": "所见之光，提前抵达",
+        "description": "以当前机位和选定日期呈现黄金/蓝调时段、实时太阳参数与主要工具入口。",
+        "blocks": [
+          {
+            "kind": "hero",
+            "title": "逐光 · 今日观测",
+            "items": [
+              "下一段黄金时刻",
+              "晚间 16:37 — 17:29",
+              "摄影计划示例 · 非实时数据"
+            ],
+            "values": [],
+            "subtitle": "SHANGHAI · GOLDEN HOUR",
+            "action": "切换机位"
+          },
+          {
+            "kind": "metrics",
+            "title": "日照概览",
+            "items": [
+              "日出",
+              "日落",
+              "方位角",
+              "高度角"
+            ],
+            "values": [
+              "06:50",
+              "17:29",
+              "238.6°",
+              "12.4°"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "chart",
+            "title": "今日太阳高度曲线",
+            "items": [
+              "06:00",
+              "09:00",
+              "12:00",
+              "15:00",
+              "18:00"
+            ],
+            "values": [],
+            "subtitle": "选中曲线点，可查看方位/高度示例",
+            "action": ""
+          },
+          {
+            "kind": "timeline",
+            "title": "光线时段",
+            "items": [
+              "06:24 蓝调",
+              "06:50 日出",
+              "07:37 晨黄金结束",
+              "16:37 暮黄金开始",
+              "17:29 日落"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "grid",
+            "title": "快捷工具",
+            "items": [
+              "太阳轨迹",
+              "反向寻光",
+              "机位",
+              "拍摄计划"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "sunpath",
+        "title": "太阳轨迹",
+        "subtitle": "今天的每一道光都有方向",
+        "description": "用可拖动时刻选择器探索太阳高度、方位和光线窗口；真实实现必须复用已有精确天文内核。",
+        "blocks": [
+          {
+            "kind": "tabs",
+            "title": "轨迹呈现",
+            "items": [
+              "高度曲线",
+              "方向罗盘",
+              "时间列表"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "chart",
+            "title": "太阳高度与时刻",
+            "items": [
+              "06:00",
+              "09:00",
+              "12:00",
+              "15:00",
+              "18:00"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "metrics",
+            "title": "选中时刻",
+            "items": [
+              "方位角",
+              "高度角",
+              "日照阶段",
+              "本地时区"
+            ],
+            "values": [
+              "238.6°",
+              "12.4°",
+              "黄金时刻",
+              "UTC+08:00"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "timeline",
+            "title": "关键时间节点",
+            "items": [
+              "民用曙光",
+              "日出",
+              "太阳正午",
+              "日落",
+              "蓝调结束"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "compass",
+            "title": "方位仪表",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "reverse",
+        "title": "反向寻光",
+        "subtitle": "从理想光线反推出时间",
+        "description": "定义摄影目标方向与高低角等条件，寻找可拍摄窗口；演示结果不代表真实算法执行。",
+        "blocks": [
+          {
+            "kind": "hero",
+            "title": "找到理想的光",
+            "items": [
+              "指定朝向与时间范围",
+              "结合现有反向寻光算法计算可拍摄区间"
+            ],
+            "values": [],
+            "subtitle": "PHOTOGRAPHY PLANNER",
+            "action": ""
+          },
+          {
+            "kind": "compass",
+            "title": "目标方位盘",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "form",
+            "title": "搜索约束",
+            "items": [
+              "目标方位（°）",
+              "容差（°）",
+              "日期起点",
+              "日期终点"
+            ],
+            "values": [
+              "235",
+              "8",
+              "2026-11-20",
+              "2026-12-20"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "tabs",
+            "title": "光线类型",
+            "items": [
+              "黄金",
+              "蓝调",
+              "太阳方向"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "候选拍摄时段（演示）",
+            "items": [
+              "11月24日 · 16:24–17:02",
+              "11月26日 · 16:21–16:59",
+              "11月30日 · 16:18–16:55"
+            ],
+            "values": [
+              "匹配条件参考",
+              "匹配条件参考",
+              "匹配条件参考"
+            ],
+            "subtitle": "点击查看候选计划",
+            "action": "预览搜索结果"
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "locations",
+        "title": "机位库",
+        "subtitle": "所有灵感，都有坐标",
+        "description": "搜索、筛选、收藏、排序并维护拍摄位置。",
+        "blocks": [
+          {
+            "kind": "form",
+            "title": "搜索机位",
+            "items": [
+              "机位名称 / 坐标"
+            ],
+            "values": [
+              "徐汇滨江"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "tabs",
+            "title": "筛选机位",
+            "items": [
+              "全部",
+              "收藏",
+              "最近"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "map",
+            "title": "机位分布预览",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "保存的机位",
+            "items": [
+              "徐汇滨江 · 日落江景",
+              "余山 · 城市远眺",
+              "外滩 · 城市建筑群"
+            ],
+            "values": [
+              "上海 · 收藏",
+              "上海 · 自然",
+              "上海 · 建筑"
+            ],
+            "subtitle": "点击进入机位详情",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "compass",
+        "title": "现场罗盘",
+        "subtitle": "把太阳落点放到眼前",
+        "description": "以设备传感器与真实太阳方位数据驱动罗盘；本 HTML 只演示视觉和状态。",
+        "blocks": [
+          {
+            "kind": "compass",
+            "title": "实时朝向预览",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "metrics",
+            "title": "观测读数",
+            "items": [
+              "太阳方位",
+              "太阳高度",
+              "设备朝向",
+              "偏差角"
+            ],
+            "values": [
+              "238.6°",
+              "12.4°",
+              "231.0°",
+              "+7.6°"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "form",
+            "title": "校准与偏移",
+            "items": [
+              "用户微调（°）"
+            ],
+            "values": [
+              "0"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "checklist",
+            "title": "校准状态",
+            "items": [
+              "定位精度已确认",
+              "磁力计校准",
+              "太阳数据校验"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "map",
+        "title": "地图方位",
+        "subtitle": "在地图上看光线落点",
+        "description": "机位点、拍摄方向扇区与太阳轨迹分层显示。",
+        "blocks": [
+          {
+            "kind": "map",
+            "title": "拍摄地图和光线方向",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "tabs",
+            "title": "地图模式",
+            "items": [
+              "地形",
+              "道路",
+              "简化"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "metrics",
+            "title": "当前机位",
+            "items": [
+              "经度",
+              "纬度",
+              "朝向",
+              "目标距离"
+            ],
+            "values": [
+              "121.4399°E",
+              "31.1804°N",
+              "238°",
+              "—"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "地图图层",
+            "items": [
+              "方向扇区",
+              "机位标记",
+              "地形高程"
+            ],
+            "values": [
+              "可切换",
+              "可切换",
+              "条件支持"
+            ],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "planner",
+        "title": "拍摄计划",
+        "subtitle": "让好时刻成为可靠计划",
+        "description": "创建、编辑和维护拍摄计划，带时间、机位、提醒和清单。",
+        "blocks": [
+          {
+            "kind": "form",
+            "title": "计划基本信息",
+            "items": [
+              "计划名称",
+              "开始时间",
+              "结束时间",
+              "地点"
+            ],
+            "values": [
+              "滨江夕照",
+              "2026-11-20 16:00",
+              "2026-11-20 18:00",
+              "徐汇滨江"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "timeline",
+            "title": "拍摄流程",
+            "items": [
+              "到达机位",
+              "构图准备",
+              "黄金时段",
+              "蓝调收尾"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "checklist",
+            "title": "拍摄准备",
+            "items": [
+              "相机与镜头",
+              "三脚架",
+              "存储卡",
+              "天气再确认"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "关联推荐",
+            "items": [
+              "黄金时段",
+              "蓝调时段",
+              "摄影提醒"
+            ],
+            "values": [
+              "示例 16:37",
+              "示例 17:29",
+              "可设置"
+            ],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "calendar",
+        "title": "光线日历",
+        "subtitle": "一个月的好光线，一眼看见",
+        "description": "用日历格展示日期状态、日光窗口与已保存计划；极昼/极夜等异常需明确标注。",
+        "blocks": [
+          {
+            "kind": "calendar",
+            "title": "2026 年 11 月",
+            "items": [
+              "月视图",
+              "光线筛选"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "metrics",
+            "title": "本月摘要",
+            "items": [
+              "黄金日",
+              "蓝调日",
+              "计划数",
+              "异常日期"
+            ],
+            "values": [
+              "12",
+              "9",
+              "3",
+              "按位置变化"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "选中日期 · 11 月 20 日",
+            "items": [
+              "晨间黄金",
+              "暮间黄金",
+              "关联计划"
+            ],
+            "values": [
+              "根据机位计算",
+              "根据机位计算",
+              "滨江夕照"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "chart",
+            "title": "月度时段趋势",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "compare",
+        "title": "时间比较",
+        "subtitle": "同一处机位，不同日子的光",
+        "description": "对比两日期或两个时段的太阳高度、时窗与最佳拍摄角度。",
+        "blocks": [
+          {
+            "kind": "form",
+            "title": "比较对象",
+            "items": [
+              "日期 A",
+              "日期 B"
+            ],
+            "values": [
+              "2026-11-20",
+              "2026-12-20"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "metrics",
+            "title": "比较读数",
+            "items": [
+              "A 日暮光",
+              "B 日暮光",
+              "高度差",
+              "方位差"
+            ],
+            "values": [
+              "示例 A",
+              "示例 B",
+              "依计算结果",
+              "依计算结果"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "chart",
+            "title": "太阳高度差异",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "比较总结",
+            "items": [
+              "日落方向移动",
+              "暮间时段长度变化",
+              "临界日期说明"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "settings",
+        "title": "设置",
+        "subtitle": "精度、单位与个人偏好",
+        "description": "统一管理单位、外观、提醒及离线数据策略。",
+        "blocks": [
+          {
+            "kind": "settings",
+            "title": "显示偏好",
+            "items": [
+              "主题模式",
+              "距离单位",
+              "角度格式",
+              "时间制"
+            ],
+            "values": [
+              "跟随系统",
+              "米 / 公里",
+              "度",
+              "24 小时"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "settings",
+            "title": "定位与权限",
+            "items": [
+              "定位授权",
+              "数据导出",
+              "拍摄提醒",
+              "关于逐光"
+            ],
+            "values": [
+              "仅使用时",
+              "手动导出",
+              "关闭",
+              "版本与协议"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "重要声明",
+            "items": [
+              "日轨计算来自实际天文内核",
+              "天气与地图需第三方服务",
+              "本 HTML 为设计预览"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "placeDetail",
+        "title": "机位详情",
+        "subtitle": "地理坐标与拍摄条件",
+        "description": "机位照片、地图、历史计划与拍摄建议分层。",
+        "blocks": [
+          {
+            "kind": "hero",
+            "title": "徐汇滨江",
+            "items": [
+              "城市天际线",
+              "31.1804°N · 121.4399°E"
+            ],
+            "values": [],
+            "subtitle": "SAVED LOCATION",
+            "action": "创建计划"
+          },
+          {
+            "kind": "map",
+            "title": "机位与拍摄方向",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "metrics",
+            "title": "当前光线",
+            "items": [
+              "黄金时段",
+              "蓝调时段",
+              "日落方向",
+              "时区"
+            ],
+            "values": [
+              "演示 16:37",
+              "演示 17:29",
+              "238°",
+              "Asia/Shanghai"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "历史计划",
+            "items": [
+              "滨江夕照",
+              "城市剪影练习",
+              "蓝调夜景"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "planDetail",
+        "title": "拍摄计划详情",
+        "subtitle": "从准备到抵达，时间不会错过",
+        "description": "已经保存的计划明细、清单与导航入口。",
+        "blocks": [
+          {
+            "kind": "hero",
+            "title": "滨江夕照",
+            "items": [
+              "已保存计划",
+              "目标时窗 16:37–17:29"
+            ],
+            "values": [],
+            "subtitle": "SHOOTING PLAN",
+            "action": "查看机位"
+          },
+          {
+            "kind": "timeline",
+            "title": "拍摄日程",
+            "items": [
+              "15:30 抵达",
+              "16:00 架设",
+              "16:37 黄金开始",
+              "17:29 日落",
+              "17:55 蓝调结束"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "checklist",
+            "title": "装备清单",
+            "items": [
+              "相机与长焦",
+              "三脚架",
+              "备用电池",
+              "清洁工具"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "map",
+            "title": "拍摄集合地点",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "计划操作",
+            "items": [
+              "编辑计划",
+              "导出摘要",
+              "取消此计划"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "framemori",
+    "name": "FrameMori",
+    "cnName": "帧间",
+    "symbol": "▣",
+    "tagline": "让每一帧，都有生命",
+    "primary": "#FF9471",
+    "secondary": "#75DDC4",
+    "pages": [
+      {
+        "id": "projects",
+        "title": "项目首页",
+        "subtitle": "从这里开始你的下一部动画",
+        "description": "项目创建、最近编辑、素材与模板入口。",
+        "blocks": [
+          {
+            "kind": "hero",
+            "title": "让每一帧都有生命",
+            "items": [
+              "逐帧拍摄 · 时间轴编辑 · 本地导出"
+            ],
+            "values": [],
+            "subtitle": "FRAME BY FRAME",
+            "action": "创建项目"
+          },
+          {
+            "kind": "grid",
+            "title": "创作快捷入口",
+            "items": [
+              "新建动画",
+              "拍摄工作台",
+              "项目模板",
+              "素材库"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "最近项目",
+            "items": [
+              "纸偶冒险 · 128 帧",
+              "桌面小剧场 · 72 帧",
+              "积木城市 · 204 帧"
+            ],
+            "values": [
+              "12 fps · 草稿",
+              "24 fps · 编辑中",
+              "12 fps · 完成"
+            ],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "capture",
+        "title": "拍摄工作台",
+        "subtitle": "稳定相机、逐帧捕捉",
+        "description": "相机预览、网格、曝光、焦点、拍摄间隔和快门。",
+        "blocks": [
+          {
+            "kind": "camera",
+            "title": "实时拍摄取景框",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "filmstrip",
+            "title": "已拍摄帧",
+            "items": [
+              "001",
+              "002",
+              "003",
+              "004",
+              "005",
+              "006",
+              "007"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "metrics",
+            "title": "当前拍摄",
+            "items": [
+              "帧数",
+              "目标帧率",
+              "播放时长",
+              "曝光"
+            ],
+            "values": [
+              "128",
+              "12 fps",
+              "10.7 秒",
+              "自动"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "form",
+            "title": "拍摄设置",
+            "items": [
+              "帧率",
+              "曝光补偿"
+            ],
+            "values": [
+              "12",
+              "+0.0"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "grid",
+            "title": "快捷操作",
+            "items": [
+              "拍摄一帧",
+              "洋葱皮",
+              "网格",
+              "稳定辅助"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "timeline",
+        "title": "逐帧时间轴",
+        "subtitle": "编辑节奏和故事动作",
+        "description": "帧缩略图、播放头、轨道、复制粘贴与撤销。",
+        "blocks": [
+          {
+            "kind": "filmstrip",
+            "title": "逐帧编辑轨",
+            "items": [
+              "120",
+              "121",
+              "122",
+              "123",
+              "124",
+              "125",
+              "126",
+              "127",
+              "128"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "waveform",
+            "title": "声音轨道",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "grid",
+            "title": "时间轴工具",
+            "items": [
+              "剪切",
+              "复制",
+              "粘贴",
+              "删除",
+              "复制帧",
+              "撤销"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "metrics",
+            "title": "当前剪辑",
+            "items": [
+              "选中帧",
+              "帧率",
+              "总帧数",
+              "时长"
+            ],
+            "values": [
+              "127",
+              "12 fps",
+              "128",
+              "10.7 s"
+            ],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "frame-editor",
+        "title": "单帧编辑",
+        "subtitle": "让一个画面恰到好处",
+        "description": "构图、色彩、曝光与变换均采用非破坏性参数。",
+        "blocks": [
+          {
+            "kind": "camera",
+            "title": "单帧预览 · 拖动对比",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "tabs",
+            "title": "调整类别",
+            "items": [
+              "基础",
+              "颜色",
+              "裁剪"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "form",
+            "title": "画面参数",
+            "items": [
+              "曝光（EV）",
+              "对比度",
+              "饱和度",
+              "旋转（°）"
+            ],
+            "values": [
+              "0.3",
+              "12",
+              "5",
+              "0"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "grid",
+            "title": "操作",
+            "items": [
+              "重置",
+              "应用本帧",
+              "应用选中",
+              "前后对比"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "audio",
+        "title": "配音与音乐",
+        "subtitle": "为画面配上节奏",
+        "description": "导入音频、设置入点、预览和音量调节。",
+        "blocks": [
+          {
+            "kind": "waveform",
+            "title": "音轨预览",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "音轨",
+            "items": [
+              "背景音乐",
+              "拟音片段",
+              "旁白"
+            ],
+            "values": [
+              "00:00–00:11",
+              "00:04–00:07",
+              "未添加"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "form",
+            "title": "轨道参数",
+            "items": [
+              "音量（%）",
+              "开始时刻（秒）"
+            ],
+            "values": [
+              "78",
+              "0"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "grid",
+            "title": "音频操作",
+            "items": [
+              "导入",
+              "静音",
+              "分割",
+              "删除"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "stability",
+        "title": "稳定性辅助",
+        "subtitle": "让每帧保持画面一致",
+        "description": "参考帧、洋葱皮、取景辅助线与位置对齐。",
+        "blocks": [
+          {
+            "kind": "camera",
+            "title": "参考帧叠加预览",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "form",
+            "title": "叠加设置",
+            "items": [
+              "洋葱皮透明度（%）",
+              "参考帧数"
+            ],
+            "values": [
+              "55",
+              "2"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "metrics",
+            "title": "对齐反馈",
+            "items": [
+              "画面漂移",
+              "亮度偏差",
+              "对齐模式",
+              "参考帧"
+            ],
+            "values": [
+              "演示",
+              "演示",
+              "手动",
+              "127"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "checklist",
+            "title": "辅助功能",
+            "items": [
+              "显示九宫格",
+              "启用洋葱皮",
+              "锁定白平衡",
+              "镜头位置复核"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "preview",
+        "title": "成片预览",
+        "subtitle": "发现节奏里的每个细节",
+        "description": "播放、循环、速度和逐帧调试。",
+        "blocks": [
+          {
+            "kind": "camera",
+            "title": "作品预览",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "timeline",
+            "title": "播放控制",
+            "items": [
+              "00:00",
+              "00:04",
+              "00:08",
+              "00:10"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "metrics",
+            "title": "预览信息",
+            "items": [
+              "分辨率",
+              "帧率",
+              "总帧数",
+              "时长"
+            ],
+            "values": [
+              "1920×1080",
+              "12 fps",
+              "128",
+              "10.7 s"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "grid",
+            "title": "预览动作",
+            "items": [
+              "播放",
+              "暂停",
+              "上一帧",
+              "下一帧"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "export",
+        "title": "动画导出",
+        "subtitle": "带走真正可播放的作品",
+        "description": "独立的格式、尺寸、帧率选择与导出进度。",
+        "blocks": [
+          {
+            "kind": "export",
+            "title": "导出格式",
+            "items": [
+              "MP4 H.264",
+              "PNG 序列",
+              "GIF"
+            ],
+            "values": [
+              "视频（需设备支持）",
+              "帧序列",
+              "动图（需验证）"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "form",
+            "title": "导出配置",
+            "items": [
+              "宽度",
+              "高度",
+              "帧率",
+              "质量"
+            ],
+            "values": [
+              "1920",
+              "1080",
+              "12",
+              "高"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "progress",
+            "title": "任务预览",
+            "items": [
+              "准备帧",
+              "编码",
+              "保存"
+            ],
+            "values": [
+              "33"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "验收条件",
+            "items": [
+              "外部播放器能播放",
+              "视频时长与帧数相符",
+              "失败可以重试"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "presets",
+        "title": "拍摄预设",
+        "subtitle": "保存自己惯用的拍摄方式",
+        "description": "快速选择帧率、曝光和叠帧参数。",
+        "blocks": [
+          {
+            "kind": "grid",
+            "title": "常用预设",
+            "items": [
+              "黏土动画",
+              "纸片动画",
+              "积木动画",
+              "自定义"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "预设配置",
+            "items": [
+              "12 fps · 柔和运动",
+              "24 fps · 流畅动态",
+              "8 fps · 手作叙事"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "form",
+            "title": "保存预设",
+            "items": [
+              "预设名称",
+              "帧率"
+            ],
+            "values": [
+              "我的动画",
+              "12"
+            ],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "settings",
+        "title": "设置与素材",
+        "subtitle": "可靠保存每一帧",
+        "description": "项目自动保存、导出路径、界面和权限。",
+        "blocks": [
+          {
+            "kind": "settings",
+            "title": "拍摄与项目",
+            "items": [
+              "自动保存",
+              "默认帧率",
+              "相机权限",
+              "本地素材存储"
+            ],
+            "values": [
+              "开启",
+              "12 fps",
+              "使用时",
+              "应用私有空间"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "settings",
+            "title": "输出与外观",
+            "items": [
+              "默认视频尺寸",
+              "默认格式",
+              "主题",
+              "语言"
+            ],
+            "values": [
+              "1080p",
+              "MP4（如支持）",
+              "深色",
+              "简体中文"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "存储管理",
+            "items": [
+              "检查项目完整性",
+              "备份项目",
+              "清理临时文件"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "voxcarve",
+    "name": "VoxCarve",
+    "cnName": "声剪",
+    "symbol": "◍",
+    "tagline": "从文字，剪出好声音",
+    "primary": "#AF9DFF",
+    "secondary": "#FDBF92",
+    "pages": [
+      {
+        "id": "projects",
+        "title": "项目首页",
+        "subtitle": "每一段声音，都有结构",
+        "description": "项目搜索、录音导入、草稿和最近编辑状态。",
+        "blocks": [
+          {
+            "kind": "hero",
+            "title": "声音从这里开始",
+            "items": [
+              "导入音频与视频",
+              "转写为可编辑的文字"
+            ],
+            "values": [],
+            "subtitle": "VOICE STUDIO",
+            "action": "导入声音"
+          },
+          {
+            "kind": "list",
+            "title": "最近项目",
+            "items": [
+              "产品访谈",
+              "团队周会",
+              "课程录音",
+              "播客第 3 期"
+            ],
+            "values": [
+              "转写待复核",
+              "字幕已编辑",
+              "未处理",
+              "剪辑中"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "grid",
+            "title": "开始工作",
+            "items": [
+              "导入文件",
+              "新建录音",
+              "文字稿",
+              "剪辑台"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "import",
+        "title": "音视频导入",
+        "subtitle": "准备处理一段录音",
+        "description": "媒体导入、语言选择、能力确认、进度与取消。",
+        "blocks": [
+          {
+            "kind": "form",
+            "title": "导入任务",
+            "items": [
+              "文件名称",
+              "语言",
+              "说话人数量"
+            ],
+            "values": [
+              "interview.wav",
+              "自动检测",
+              "自动"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "checklist",
+            "title": "导入检查",
+            "items": [
+              "格式支持验证",
+              "读取音轨信息",
+              "确认 ASR 服务可用",
+              "隐私授权"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "progress",
+            "title": "准备转写",
+            "items": [
+              "读取媒体",
+              "提交转写",
+              "人工校对"
+            ],
+            "values": [
+              "28"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "能力说明",
+            "items": [
+              "转写不等于词级精确时间戳",
+              "无法使用的服务应提供替代方案"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "transcript",
+        "title": "文字稿",
+        "subtitle": "在音频时间里直接编辑文字",
+        "description": "时间戳、说话人、文本选择、播放联动与版本记录。",
+        "blocks": [
+          {
+            "kind": "tabs",
+            "title": "编辑模式",
+            "items": [
+              "文字稿",
+              "说话人",
+              "备注"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "带时间戳的语句",
+            "items": [
+              "00:00:04 · 说话人 A：欢迎来到今天的访谈",
+              "00:00:12 · 说话人 B：我想从设计目标开始",
+              "00:00:19 · 说话人 A：先谈谈你的创作过程",
+              "00:00:28 · 说话人 B：这是一个新的尝试"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "waveform",
+            "title": "联动音轨",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "form",
+            "title": "搜索当前文字稿",
+            "items": [
+              "关键词"
+            ],
+            "values": [
+              "设计目标"
+            ],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "timeline",
+        "title": "音频剪辑台",
+        "subtitle": "在时间线上精准修剪声音",
+        "description": "波形、区间选择、剪切、复制、试听、撤销。",
+        "blocks": [
+          {
+            "kind": "waveform",
+            "title": "音频波形与选区",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "form",
+            "title": "当前选区",
+            "items": [
+              "开始时间（秒）",
+              "结束时间（秒）",
+              "淡入（秒）"
+            ],
+            "values": [
+              "12.360",
+              "28.640",
+              "0.2"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "grid",
+            "title": "剪辑工具",
+            "items": [
+              "修剪",
+              "分割",
+              "删除",
+              "保留",
+              "撤销",
+              "试听"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "timeline",
+            "title": "编辑轨道",
+            "items": [
+              "00:00",
+              "00:15",
+              "00:30",
+              "00:45"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "silence",
+        "title": "停顿复核",
+        "subtitle": "剪掉停顿之前，先让你听见",
+        "description": "静音片段检测与人工确认；不可一次性不可逆覆盖。",
+        "blocks": [
+          {
+            "kind": "waveform",
+            "title": "停顿候选区域",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "form",
+            "title": "检测阈值",
+            "items": [
+              "最短停顿（秒）",
+              "前后保留（秒）"
+            ],
+            "values": [
+              "0.6",
+              "0.3"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "checklist",
+            "title": "建议删除片段",
+            "items": [
+              "00:12.3–00:13.1",
+              "01:48.0–01:49.4",
+              "03:03.2–03:04.3"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "metrics",
+            "title": "变更预估",
+            "items": [
+              "候选数量",
+              "预计缩短",
+              "操作模式",
+              "保存方式"
+            ],
+            "values": [
+              "3",
+              "3.5 秒",
+              "人工确认",
+              "非破坏性"
+            ],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "captions",
+        "title": "字幕编辑",
+        "subtitle": "字幕与声音保持一致",
+        "description": "字幕分段、阅读速度、样式与导出前检查。",
+        "blocks": [
+          {
+            "kind": "tabs",
+            "title": "字幕类型",
+            "items": [
+              "逐句",
+              "双语",
+              "样式"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "字幕段落",
+            "items": [
+              "00:00–00:04 欢迎来到今天的访谈",
+              "00:04–00:09 让我们从问题开始",
+              "00:09–00:15 谢谢你的邀请"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "form",
+            "title": "字幕样式",
+            "items": [
+              "单行最大字数",
+              "行数",
+              "时间偏移（ms）"
+            ],
+            "values": [
+              "16",
+              "2",
+              "0"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "grid",
+            "title": "字幕操作",
+            "items": [
+              "合并",
+              "拆分",
+              "上一条",
+              "下一条"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "preview",
+        "title": "剪后试听试看",
+        "subtitle": "最终声音，不靠想象",
+        "description": "试听真实媒体片段，核对时间线、字幕和音量。",
+        "blocks": [
+          {
+            "kind": "waveform",
+            "title": "音频试听区域",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "timeline",
+            "title": "播放位置",
+            "items": [
+              "00:00",
+              "00:15",
+              "00:30",
+              "00:45"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "metrics",
+            "title": "预览状态",
+            "items": [
+              "项目长度",
+              "播放速度",
+              "剩余变更",
+              "输出格式"
+            ],
+            "values": [
+              "00:58",
+              "1.0×",
+              "3 条",
+              "WAV"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "校验提醒",
+            "items": [
+              "音频片段完整性",
+              "字幕时间对齐",
+              "声音峰值与失真检查"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "export",
+        "title": "导出",
+        "subtitle": "把编辑成果交给真实播放器",
+        "description": "媒体与字幕独立导出，显示格式、编码和耗时。",
+        "blocks": [
+          {
+            "kind": "export",
+            "title": "可选交付",
+            "items": [
+              "WAV",
+              "MP3",
+              "SRT",
+              "VTT"
+            ],
+            "values": [
+              "无损音频",
+              "有损编码（验证）",
+              "通用字幕",
+              "WebVTT"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "settings",
+            "title": "导出选项",
+            "items": [
+              "字幕编码",
+              "保存位置",
+              "覆盖冲突",
+              "项目备份"
+            ],
+            "values": [
+              "UTF-8",
+              "用户选定",
+              "确认再覆盖",
+              "推荐"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "progress",
+            "title": "导出任务",
+            "items": [
+              "媒体准备",
+              "编码",
+              "写入"
+            ],
+            "values": [
+              "0"
+            ],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "history",
+        "title": "历史与版本",
+        "subtitle": "每一次剪辑都可追溯",
+        "description": "查看版本、恢复点和编辑摘要。",
+        "blocks": [
+          {
+            "kind": "list",
+            "title": "历史版本",
+            "items": [
+              "v5 · 修正字幕",
+              "v4 · 静音片段复核",
+              "v3 · 主动剪辑",
+              "v2 · 导入与转写"
+            ],
+            "values": [
+              "今天 16:20",
+              "今天 15:42",
+              "昨天 21:00",
+              "昨天 20:10"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "metrics",
+            "title": "版本概览",
+            "items": [
+              "版本数",
+              "撤销步骤",
+              "素材数",
+              "备份状态"
+            ],
+            "values": [
+              "5",
+              "12",
+              "3",
+              "本地"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "checklist",
+            "title": "历史策略",
+            "items": [
+              "保留原媒体",
+              "版本可恢复",
+              "变更有时间范围"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "settings",
+        "title": "设置",
+        "subtitle": "尊重声音，也尊重隐私",
+        "description": "语言与 ASR 服务、自动保存、播放和存储。",
+        "blocks": [
+          {
+            "kind": "settings",
+            "title": "音频偏好",
+            "items": [
+              "语言",
+              "转写提供方",
+              "自动保存",
+              "默认播放速度"
+            ],
+            "values": [
+              "简体中文",
+              "按实际可用性",
+              "30 秒",
+              "1.0×"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "settings",
+            "title": "隐私与导出",
+            "items": [
+              "默认离线优先",
+              "数据清理",
+              "导出字幕编码",
+              "主题"
+            ],
+            "values": [
+              "是",
+              "手动",
+              "UTF-8",
+              "深色"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "能力说明",
+            "items": [
+              "时间戳精度可能依服务而异",
+              "不承诺云转写一定可用",
+              "任何媒体上传必须征求授权"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "macroloom",
+    "name": "MacroLoom",
+    "cnName": "键阵",
+    "symbol": "⌘",
+    "tagline": "一个按钮，串起工作流",
+    "primary": "#B3F07C",
+    "secondary": "#7FC8FF",
+    "pages": [
+      {
+        "id": "home",
+        "title": "控制台首页",
+        "subtitle": "手机上的工作流控制中心",
+        "description": "连接电脑、最近动作、常用面板和运行状态。",
+        "blocks": [
+          {
+            "kind": "hero",
+            "title": "你的桌面，就在掌心",
+            "items": [
+              "安全连接 Windows Agent",
+              "一键触发获授权的动作"
+            ],
+            "values": [],
+            "subtitle": "DESKTOP CONTROL",
+            "action": "连接设备"
+          },
+          {
+            "kind": "metrics",
+            "title": "当前连接",
+            "items": [
+              "设备数",
+              "连接状态",
+              "平均往返",
+              "最近执行"
+            ],
+            "values": [
+              "1",
+              "演示已连接",
+              "12 ms",
+              "构建完成"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "deck",
+            "title": "常用面板",
+            "items": [
+              "构建",
+              "打开 IDE",
+              "截图",
+              "音量+",
+              "播放/暂停",
+              "锁屏"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "最近活动",
+            "items": [
+              "09:12 构建项目",
+              "09:10 截取屏幕",
+              "08:52 打开工作区"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "pair",
+        "title": "首次配对",
+        "subtitle": "信任从明确授权开始",
+        "description": "二维码、一次性配对码、本机服务验证与取消配对。",
+        "blocks": [
+          {
+            "kind": "pair",
+            "title": "与桌面建立连接",
+            "items": [],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "form",
+            "title": "输入配对信息",
+            "items": [
+              "配对码",
+              "设备备注"
+            ],
+            "values": [
+              "847296",
+              "我的工作电脑"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "checklist",
+            "title": "配对要求",
+            "items": [
+              "电脑端主动显示验证码",
+              "用户确认设备身份",
+              "双向认证与密钥持久化",
+              "可随时撤销设备"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "发现设备",
+            "items": [
+              "我的电脑 · 局域网",
+              "其他设备 · 未授权"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "deck",
+        "title": "控制面板",
+        "subtitle": "高频动作，触手可及",
+        "description": "可自定义按钮网格、状态回执、失败重试。",
+        "blocks": [
+          {
+            "kind": "tabs",
+            "title": "面板组",
+            "items": [
+              "默认",
+              "开发",
+              "媒体"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "deck",
+            "title": "默认面板",
+            "items": [
+              "构建",
+              "清理",
+              "IDE",
+              "截图",
+              "锁定",
+              "音量+",
+              "上一首",
+              "播放",
+              "下一首"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "metrics",
+            "title": "执行状态",
+            "items": [
+              "执行中",
+              "已完成",
+              "失败",
+              "待确认"
+            ],
+            "values": [
+              "0",
+              "4",
+              "0",
+              "1"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "操作约束",
+            "items": [
+              "危险命令必须二次确认",
+              "所有执行结果带回执",
+              "脱机时禁用远程按钮"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "designer",
+        "title": "面板布局编辑",
+        "subtitle": "每一格都按你的习惯排列",
+        "description": "网格密度、按键文案、图标和拖拽排序。",
+        "blocks": [
+          {
+            "kind": "deck",
+            "title": "编辑面板",
+            "items": [
+              "构建",
+              "清理",
+              "IDE",
+              "截图",
+              "音量",
+              "播放"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "tabs",
+            "title": "网格布局",
+            "items": [
+              "2×2",
+              "3×2",
+              "3×3",
+              "4×3"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "form",
+            "title": "按钮属性",
+            "items": [
+              "按钮名称",
+              "按钮图标",
+              "按下反馈"
+            ],
+            "values": [
+              "构建",
+              "⚡",
+              "触感+高亮"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "checklist",
+            "title": "编辑规则",
+            "items": [
+              "拖拽排序后保存",
+              "取消放弃未保存更改",
+              "重复命令需提示"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "macros",
+        "title": "宏编辑器",
+        "subtitle": "把重复步骤编成一次动作",
+        "description": "逐步骤设置执行、延时、条件与失败处理。",
+        "blocks": [
+          {
+            "kind": "form",
+            "title": "宏属性",
+            "items": [
+              "宏名称",
+              "执行模式",
+              "失败处理"
+            ],
+            "values": [
+              "构建并启动",
+              "串行",
+              "立即停止"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "checklist",
+            "title": "宏步骤",
+            "items": [
+              "运行构建命令",
+              "等待 3 秒",
+              "启动指定应用",
+              "通知执行结果"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "安全边界",
+            "items": [
+              "不可绕过 UAC",
+              "不可绕过锁屏",
+              "不执行未授权命令"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "grid",
+            "title": "步骤操作",
+            "items": [
+              "新增",
+              "删除",
+              "上移",
+              "下移"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "actions",
+        "title": "安全动作库",
+        "subtitle": "可控的操作，才值得一键执行",
+        "description": "预置常用动作与受限高风险动作分组。",
+        "blocks": [
+          {
+            "kind": "tabs",
+            "title": "动作类别",
+            "items": [
+              "应用",
+              "媒体",
+              "系统"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "grid",
+            "title": "动作模板",
+            "items": [
+              "启动应用",
+              "媒体播放",
+              "音量调节",
+              "窗口切换",
+              "屏幕截图",
+              "通知"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "权限需求",
+            "items": [
+              "普通执行：单击确认",
+              "文件修改：明确路径与范围",
+              "系统级动作：额外确认"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "checklist",
+            "title": "安全规则",
+            "items": [
+              "禁止任意远程 shell 默认开放",
+              "动作可查看参数",
+              "运行日志记录敏感字段最小化"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "devices",
+        "title": "设备列表",
+        "subtitle": "知道谁有权限连接你的电脑",
+        "description": "展示在线设备、密钥状态、最近连接与撤销。",
+        "blocks": [
+          {
+            "kind": "list",
+            "title": "已配对设备",
+            "items": [
+              "工作电脑 · 在线",
+              "家用电脑 · 离线",
+              "测试机 · 等待授权"
+            ],
+            "values": [
+              "12 ms",
+              "上次昨天",
+              "未连接"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "metrics",
+            "title": "连接概览",
+            "items": [
+              "在线",
+              "离线",
+              "待审核",
+              "过期授权"
+            ],
+            "values": [
+              "1",
+              "1",
+              "1",
+              "0"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "form",
+            "title": "设备属性",
+            "items": [
+              "显示名称",
+              "服务端地址"
+            ],
+            "values": [
+              "工作电脑",
+              "局域网"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "grid",
+            "title": "设备操作",
+            "items": [
+              "重新连接",
+              "断开",
+              "查看详情",
+              "撤销"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "activity",
+        "title": "执行记录",
+        "subtitle": "每一个动作都有明确结果",
+        "description": "时间顺序、状态过滤、执行耗时与错误回执。",
+        "blocks": [
+          {
+            "kind": "tabs",
+            "title": "筛选",
+            "items": [
+              "全部",
+              "成功",
+              "失败"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "timeline",
+            "title": "最近运行",
+            "items": [
+              "09:12 Build",
+              "09:10 Screenshot",
+              "08:52 Open IDE",
+              "08:45 Volume"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "执行详情",
+            "items": [
+              "构建项目 · 成功 · 3.2 秒",
+              "截图 · 成功 · 0.7 秒",
+              "打开 IDE · 成功 · 1.4 秒",
+              "清理缓存 · 待确认"
+            ],
+            "values": [
+              "有回执",
+              "有回执",
+              "有回执",
+              "未执行"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "metrics",
+            "title": "今日汇总",
+            "items": [
+              "总操作",
+              "成功",
+              "失败",
+              "取消"
+            ],
+            "values": [
+              "14",
+              "12",
+              "1",
+              "1"
+            ],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "diagnostics",
+        "title": "连接诊断",
+        "subtitle": "连接的稳定性应该可以验证",
+        "description": "网络往返、Agent 版本、端口和功能状态报告。",
+        "blocks": [
+          {
+            "kind": "metrics",
+            "title": "连接质量",
+            "items": [
+              "往返延迟",
+              "上传速率",
+              "下载速率",
+              "连接状态"
+            ],
+            "values": [
+              "12 ms",
+              "3.2 KB/s",
+              "5.8 KB/s",
+              "演示在线"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "checklist",
+            "title": "诊断项目",
+            "items": [
+              "Agent 证书验证",
+              "应用握手协议",
+              "指令队列回执",
+              "失联恢复策略"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "progress",
+            "title": "诊断进度",
+            "items": [
+              "网络连通",
+              "认证",
+              "Agent 响应"
+            ],
+            "values": [
+              "68"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "故障处理",
+            "items": [
+              "网络不通：检查同网段",
+              "认证失效：重新配对",
+              "Agent 不在线：检查电脑程序"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      },
+      {
+        "id": "settings",
+        "title": "安全与设置",
+        "subtitle": "控制越方便，边界越清楚",
+        "description": "连接加密、权限、面板、通知和备份。",
+        "blocks": [
+          {
+            "kind": "settings",
+            "title": "安全设置",
+            "items": [
+              "连接权限",
+              "执行确认",
+              "本机生物认证",
+              "自动断线"
+            ],
+            "values": [
+              "仅已配对",
+              "危险操作需确认",
+              "可选",
+              "开启"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "settings",
+            "title": "界面偏好",
+            "items": [
+              "布局",
+              "主题",
+              "通知",
+              "备份"
+            ],
+            "values": [
+              "3×3",
+              "深色",
+              "开启",
+              "仅手动"
+            ],
+            "subtitle": "",
+            "action": ""
+          },
+          {
+            "kind": "list",
+            "title": "隐私声明",
+            "items": [
+              "配对密钥仅本机保存",
+              "日志不可记录凭据",
+              "不会绕过 UAC 和锁屏"
+            ],
+            "values": [],
+            "subtitle": "",
+            "action": ""
+          }
+        ],
+        "stateNotes": [
+          "Normal：展示本页完整任务链",
+          "Empty：显示原因和唯一明确的下一步",
+          "Loading：显示真实可取消的任务状态",
+          "Error：可恢复操作与明确错误说明"
+        ]
+      }
+    ]
+  }
+];
+
+
+function h(value) {
+  return String(value ?? '').replace(/[&<>"']/g, (x) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x] || x));
+}
+function icon(i) {
+  const icons = ['◈','◉','⌁','▣','✦','◎','⊞','⌘','◌','▤','⌖','⚙'];
+  return icons[i % icons.length];
+}
+function title(b) {
+  return '<div class="panel-title"><span>' + h(b.title) + '</span>' + (b.subtitle ? '<small>' + h(b.subtitle) + '</small>' : '') + '</div>';
+}
+function row(text, subtitle, index) {
+  return '<div class="list-row"><span class="row-icon">' + icon(index) + '</span><span class="copy"><strong>' +
+    h(text) + '</strong>' + (subtitle ? '<small>' + h(subtitle) + '</small>' : '') + '</span><span class="chevron">›</span></div>';
+}
+function chartSvg() {
+  return '<svg viewBox="0 0 344 150" role="img" aria-label="示例太阳高度或媒体走势曲线；不是实时计算结果">' +
+    '<defs><linearGradient id="wave-fill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="currentColor" stop-opacity=".3"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs>' +
+    '<line class="grid" x1="10" y1="124" x2="334" y2="124"/><line class="grid" x1="10" y1="83" x2="334" y2="83"/><line class="grid" x1="10" y1="42" x2="334" y2="42"/>' +
+    '<path d="M 10 124 C 62 102 75 60 124 43 S 214 28 253 63 S 310 114 334 124 L334 124 L10 124 Z" fill="url(#wave-fill)" style="color:var(--accent)"/>' +
+    '<path class="line" d="M 10 124 C 62 102 75 60 124 43 S 214 28 253 63 S 310 114 334 124"/>' +
+    '<circle cx="253" cy="63" r="6" fill="var(--accent)" stroke="#fff" stroke-width="2"/>' +
+    '<text x="12" y="22" font-size="9" fill="#98b5c2">90°</text><text x="12" y="76" font-size="9" fill="#98b5c2">45°</text><text x="12" y="141" font-size="9" fill="#98b5c2">0°</text></svg>';
+}
+function renderBlock(b, app, page, index, activeTab) {
+  const items = b.items || [];
+  const values = b.values || [];
+  const shell = '<section class="panel panel-pad" data-block="' + h(b.kind) + '">' + title(b);
+  switch (b.kind) {
+    case 'hero':
+      return '<section class="hero panel"><span class="kicker">' + h(b.subtitle || app.name) +
+        '</span><h3>' + h(b.title) + '</h3><p>' + h(items.join(' · ')) +
+        '</p><button class="hero-btn" data-act="sheet">' + h(b.action || '开始探索') + '　↗</button></section>';
+    case 'metrics':
+      return shell + '<div class="metrics">' + items.map((it, i) =>
+        '<div class="metric"><label>' + h(it) + '</label><strong>' + h(values[i] || '—') +
+        '</strong><small>' + (i % 2 ? h(app.secondary) : h(app.primary)) + ' · 演示</small></div>').join('') + '</div></section>';
+    case 'chart':
+      return shell + '<div class="chart">' + chartSvg() + '<div class="chart-labels">' +
+        (items.length ? items : ['06:00','09:00','12:00','15:00','18:00']).map((x) =>
+          '<span>' + h(x) + '</span>').join('') +
+        '</div><div class="demo-stamp">曲线结构演示 · 后续由真实算法/音频数据驱动</div></div></section>';
+    case 'timeline':
+      return shell + '<div class="timeline"><div class="bar"><i class="tick"></i></div></div>' +
+        '<div class="timeline-labels"><span>' + h(items[0] || '开始') + '</span><span>' +
+        h(items[items.length-1] || '结束') + '</span></div>' +
+        '<div class="list" style="margin-top:13px">' + items.slice(0,6).map((it,i) =>
+        '<div class="settings-row"><span>' + h(icon(i)) + '　' + h(it) + '</span><small>' +
+        (i===2?'● 当前选择':'○') + '</small></div>').join('') + '</div></section>';
+    case 'list':
+      return shell + '<div class="list">' + items.map((it,i) =>
+         row(it,values[i] || '',i + index)).join('') + '</div>' +
+         (b.action?'<button class="secondary" data-act="sheet" style="margin-top:12px">' + h(b.action) + '</button>':'') + '</section>';
+    case 'grid':
+    case 'deck':
+      return shell + '<div class="' + (b.kind === 'deck' ? 'grid3':'grid2') + '">' +
+        items.map((it,i) => '<button class="tile" data-act="demo" data-label="' +
+        h(it) + '"><span class="glyph">' + icon(i+index) + '</span>' + h(it) + '</button>').join('') +
+        '</div><p class="muted" style="font-size:10px;margin-bottom:0">按钮可点击；这里不执行真实设备或媒体操作。</p></section>';
+    case 'form':
+      return shell + items.map((it,i) => '<div class="field"><label for="field-' + h(page.id) + '-' + i + '">' +
+        h(it) + '</label><input id="field-' + h(page.id) + '-' + i + '" value="' + h(values[i] || '') +
+        '" placeholder="请输入' + h(it) + '"></div>').join('') +
+        '<button class="primary" data-act="sheet">预览本页操作流程　↗</button></section>';
+    case 'calendar': {
+      const week = ['一','二','三','四','五','六','日'];
+      const cells = week.map((x)=>'<div class="day weekday">周' + x + '</div>').join('') +
+        Array.from({length:35},(_,i)=>{
+         const date = i-5; return date>0 && date<=30 ?
+         '<button class="day ' + (date===20?'selected':'') + '" data-act="demo" data-label="11 月 '+date+' 日"><b>'+date+'</b><em>'+ (date%3===0?'黄金':date%4===0?'蓝调':'·')+'</em></button>' :
+         '<div class="day" style="opacity:.2">·</div>';
+        }).join('');
+      return shell + '<div class="calendar">' + cells + '</div><p class="muted" style="font-size:10px">月历结构演示；真实极昼、缺失日期、时区异常须由业务逻辑提供。</p></section>';
+    }
+    case 'camera':
+      return shell + '<div class="camera-viewport" role="img" aria-label="取景构图示意：此处替换为真实相机预览或许可摄影素材">' +
+        '<span class="frame-figure">✦</span></div><div class="action-row" style="margin-top:13px"><button class="secondary" data-act="demo" data-label="上一帧">◀</button>' +
+        '<button class="primary" data-act="demo" data-label="采集/播放模拟">◎　取景/播放演示</button><button class="secondary" data-act="demo" data-label="下一帧">▶</button></div>' +
+        '<div class="demo-stamp">视觉占位 · 不调用真实相机或播放器</div></section>';
+    case 'filmstrip':
+      return shell + '<div class="filmstrip">' + (items.length?items:['01','02','03','04','05','06','07']).map((x,i) =>
+        '<button class="frame '+(i===3?'selected':'')+'" data-act="demo" data-label="第 '+h(x)+' 帧">◈</button>').join('') +
+        '</div><p class="muted" style="font-size:10px;margin:8px 0 0">可在组件层复用帧缩略图与选中边框。</p></section>';
+    case 'waveform':
+      return shell + '<div class="waveform" role="img" aria-label="用于页面布局的示意波形，不是录音波形">' +
+        Array.from({length:50},(_,i)=>{
+          const v = Math.round(8+58*Math.abs(Math.sin(i*1.83)*Math.cos(i*.49)));
+          return '<i style="height:' + v + '%"></i>';
+        }).join('') + '</div><div class="timeline-labels" style="margin-top:8px"><span>00:00</span><span>00:15</span><span>00:30</span><span>00:45</span></div>' +
+        '<div class="action-row" style="margin-top:13px"><button class="secondary" data-act="demo" data-label="播放">▶　试听演示</button>' +
+        '<button class="secondary" data-act="demo" data-label="选择片段">⌁　选择区间</button></div></section>';
+    case 'map':
+      return shell + '<div class="map" role="img" aria-label="地图图层示意，不是真实地图服务"><span class="pin">⌖</span><span class="disclaimer">地图视觉占位 · 未接入地理服务</span></div>' +
+        '<div class="action-row" style="margin-top:12px"><button class="secondary" data-act="demo" data-label="地图定位">◎ 定位</button>' +
+        '<button class="secondary" data-act="demo" data-label="切换图层">▧ 图层</button></div></section>';
+    case 'compass':
+      return shell + '<div class="compass" role="img" aria-label="演示朝向，不代表传感器实测数据"><span class="n">N</span><span class="e">E</span><span class="s">S</span><span class="w">W</span></div>' +
+        '<div class="metrics"><div class="metric"><label>示例方位角</label><strong>238.6°</strong><small>西南方向</small></div>' +
+        '<div class="metric"><label>示例高度角</label><strong>12.4°</strong><small>依据真实数据替换</small></div></div></section>';
+    case 'settings':
+      return shell + items.map((it,i) =>
+        '<div class="settings-row"><span>' + h(it) + '</span>' +
+        (i%3===2 ? '<button class="toggle on" data-act="toggle" aria-label="切换' + h(it) + '" aria-pressed="true"></button>':
+        '<small>' + h(values[i] || '选择') + '　›</small>') + '</div>').join('') + '</section>';
+    case 'progress':
+      return shell + '<p class="muted" style="font-size:12px">以下为状态演示，不执行真实处理</p><div class="progress"><span style="width:' +
+        h(values[0] || '38') + '%"></span></div><div class="list" style="margin-top:14px">' +
+        items.map((x,i)=>'<div class="settings-row"><span>'+h(x)+'</span><small>'+(i===0?'✓':i===1?'进行中':'待处理')+'</small></div>').join('') +
+        '</div><button class="secondary" style="margin-top:10px" data-act="demo" data-label="取消演示任务">停止演示</button></section>';
+    case 'checklist':
+      return shell + '<div class="list">' + items.map((it,i) =>
+        '<label class="settings-row" style="cursor:pointer"><span><input type="checkbox" ' + (i<2?'checked ':'') + '>　' +
+        h(it) + '</span></label>').join('') + '</div></section>';
+    case 'export':
+      return shell + '<div class="grid2">' + items.map((it,i) =>
+        '<button class="tile '+(i===0?'selected':'')+'" data-act="demo" data-label="'+h(it)+'"><span class="glyph">'+icon(i)+'</span><strong>'+h(it)+'</strong><small class="muted">'+h(values[i] || '导出格式')+'</small></button>').join('') +
+        '</div><button class="primary" style="margin-top:12px" data-act="sheet">查看导出规格及验证要求</button></section>';
+    case 'pair':
+      return shell + '<div style="padding:24px;text-align:center;background:linear-gradient(145deg,#0b2031,#234d5d);border-radius:15px">' +
+        '<div style="font-size:60px">▣　⌁　▯</div><p style="font-size:12px">在 Windows Agent 端生成配对码</p>' +
+        '<div style="font-size:31px;letter-spacing:.28em;color:var(--accent);font-weight:800">847296</div><small class="muted">示例配对码 · 不可实际连接</small></div>' +
+        '<button class="primary" style="margin-top:13px" data-act="sheet">连接流程预览</button></section>';
+    case 'tabs':
+      return shell + '<div class="pillbar">' + items.map((it,i) =>
+        '<button class="' + (i===activeTab?'active':'') + '" data-act="tab" data-index="' + i + '">' + h(it) + '</button>').join('') +
+        '</div><p class="muted" style="font-size:10px">切换分段控件会更新选中态，业务数据需要在 ArkUI 中接入。</p></section>';
+    case 'editor':
+      return shell + items.map((it,i) =>
+        '<div class="field"><label>'+h(it)+'</label><input type="range" min="-100" max="100" value="'+h(values[i] || '0') +
+        '" aria-label="'+h(it)+'"></div>').join('') + '</section>';
+    default:
+      return shell + '<p class="muted">组件设计待补充</p></section>';
+  }
+}
+function renderBody(app, page, state) {
+  if(state.status==='loading') return '<div class="screen-body"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><p class="muted">Loading 状态 · 任务可取消与超时处理应由 ArkUI 实现</p></div>';
+  if(state.status==='error') return '<div class="empty"><span class="illus">⚠</span><b>无法加载此页面的数据</b><p>这里演示明确错误、恢复建议和重试操作。不显示伪造的成功结果。</p><button class="primary" data-act="normal">重试预览</button></div>';
+  if(state.status==='empty') return '<div class="empty"><span class="illus">◇</span><b>还没有任何内容</b><p>请创建第一项内容。空状态视觉素材以后按提示词补图，而不是把整个 UI 变成静态图片。</p><button class="primary" data-act="normal">返回正常页面</button></div>';
+  return '<div class="screen-body">' + page.blocks.map((b,i)=>renderBlock(b,app,page,i,state.activeTab)).join('') + '</div>';
+}
+function renderPhone(app, page, state) {
+ const list = app.pages;
+ const index = list.findIndex((x)=>x.id===page.id);
+ const navIndexes = [0,1,2,3];
+ const shortLabels = app.id==='lightbearing' ? ['首页','轨迹','寻光','机位'] :
+  app.id==='framemori' ? ['项目','拍摄','时间轴','单帧'] :
+  app.id==='voxcarve' ? ['项目','导入','文字稿','音轨'] : ['首页','配对','面板','编辑'];
+ return '<div class="phone-top">08:36　HarmonyOS · UI Preview</div><div class="app-surface">' +
+  '<header class="app-header"><div><div class="eyebrow">'+h(app.cnName)+' · '+h(app.name.toUpperCase())+'</div><h2>'+h(page.title)+'</h2></div>' +
+  '<div class="app-top-actions"><button class="app-action" data-act="prev" aria-label="上一页">‹</button>' +
+  '<button class="app-action" data-act="next" aria-label="下一页">›</button><button class="app-action" data-act="sheet" aria-label="更多操作">⋯</button></div></header>' +
+  '<div class="app-subline">'+h(page.subtitle)+'</div>' + renderBody(app,page,state) +
+  '<nav class="bottom-nav">' + navIndexes.map((i)=>'<button class="'+(index===i?'active':'')+'" data-act="page" data-index="'+i+'" aria-label="'+h(shortLabels[i])+'">' +
+  '<span>'+icon(i)+'</span>'+h(shortLabels[i])+'</button>').join('') + '</nav></div>' +
+  (state.sheet ? '<div class="sheet-backdrop" data-act="close-sheet"><div class="sheet" role="dialog" aria-label="设计预览说明" onclick="event.stopPropagation()"><h3>交互预览 · '+h(page.title)+'</h3>' +
+  '<p>此处只展示交互结构与状态，并不访问相机、定位、音频转写、地图服务、Windows Agent 或真实天文计算。正式开发时，将 UI 绑定到 ArkTS 业务接口。</p>' +
+  '<button class="primary" data-act="close-sheet">明白了</button></div></div>' : '');
+}
+function renderSidebar(apps, state) {
+ const app = apps.find((x)=>x.id===state.appId) || apps[0];
+ return '<aside class="sidebar"><div class="brand"><span class="mark">X</span><span><strong>序作 Studio</strong><small>HARMONYOS · TYPESCRIPT DESIGN</small></span></div>' +
+  '<div class="section-caption">同风格四款 · 选择应用</div><div class="apps-strip">' +
+  apps.map((a)=>'<button class="app-choice '+(a.id===state.appId?'active':'')+'" data-act="app" data-app="'+h(a.id)+'" style="--app-accent:'+h(a.primary)+'">' +
+  '<span class="app-symbol">'+h(a.symbol)+'</span><span><strong>'+h(a.cnName)+' / '+h(a.name)+'</strong><small>'+h(a.tagline)+'</small></span></button>').join('') +
+  '</div><div class="section-caption">'+h(app.name)+' · '+app.pages.length+' 个页面</div><div class="screen-nav">' +
+  app.pages.map((p,i)=>'<button class="screen-link '+(i===state.pageIndex?'active':'')+'" data-act="page" data-index="'+i+'"><span class="num">'+String(i+1).padStart(2,'0')+'</span>'+h(p.title)+'</button>').join('') +
+  '</div><div class="sidebar-bottom">共 42 个独立业务页面<br>代码：TypeScript · 组件可复用<br>StoroPix：视觉独立，不在本套设计内</div></aside>';
+}
+function renderInspector(app, page) {
+ const kinds = Array.from(new Set(page.blocks.map((b)=>b.kind)));
+ return '<aside class="inspector"><h3>DESIGN INSPECTOR</h3><p>设计稿源模型：TypeScript<br>目标实现：HarmonyOS 7 · API 26</p>' +
+ '<div class="inspector-box"><h4>当前页面 · '+h(page.title)+'</h4><p>'+h(page.description)+'</p><div class="demo-stamp">页面编号：'+h(app.id+'/'+page.id)+'</div></div>' +
+ '<div class="inspector-box"><h4>统一视觉系统</h4><div class="swatches">' +
+ ['#0B1622','#152836','#1C3546',app.primary,app.secondary].map((s)=>'<span class="swatch" title="'+s+'" style="background:'+s+'"></span>').join('') +
+ '</div><p>基础 4vp 间距系统 · 12–20vp 圆角 · 48vp 触控目标。</p></div>' +
+ '<div class="inspector-box"><h4>本页可复用组件</h4><ul class="spec-list">'+kinds.map((k)=>'<li>'+h(k)+'</li>').join('')+'</ul></div>' +
+ '<div class="inspector-box"><h4>交互状态覆盖</h4>'+['Normal / Empty / Loading / Error','点击反馈与可取消路径','通用导航与组件外观','弱网与设备不可用降级'].map((x)=>'<div class="note">'+h(x)+'</div>').join('')+'</div>' +
+ '<div class="inspector-box"><h4>ArkTS 迁移提醒</h4><p>页面模型、状态和事件接口按静态类型组织；本 HTML 的 DOM、CSS、SVG 是预览适配层，不能直接作为原生 .ets 编译。真正 UI 应用 ArkUI 的 @Component、@State 或新状态管理方式逐项重建。</p></div>' +
+ '</aside>';
+}
+
+
+const root = document.getElementById('app');
+const state = {
+  appId: 'lightbearing',
+  pageIndex: 0,
+  deviceWidth: 390,
+  light: false,
+  status: 'normal',
+  activeTab: 0,
+  sheet: false,
+  toast: ''
+};
+function currentApp() {
+  return APPS.find((app) => app.id === state.appId) || APPS[0];
+}
+function currentPage() {
+  const app = currentApp();
+  return app.pages[state.pageIndex] || app.pages[0];
+}
+function option(value, label, selected) {
+  return '<option value="' + value + '" ' + (selected ? 'selected' : '') + '>' + label + '</option>';
+}
+function render() {
+  const app = currentApp();
+  const page = currentPage();
+  const glow = app.id==='lightbearing' ? 'rgba(255,188,107,.17)' : app.id==='framemori' ?
+   'rgba(255,148,113,.16)' : app.id==='voxcarve' ? 'rgba(175,157,255,.18)' : 'rgba(179,240,124,.16)';
+  document.body.dataset.theme = state.light ? 'light' : 'dark';
+  const toolbar =
+    '<div class="stage-head"><div><h1>' + app.cnName + ' · ' + page.title + '</h1><p>' +
+    app.name + ' / ' + page.id + ' · HTML + TypeScript 高保真交互设计稿</p></div><div class="controls">' +
+    '<select class="select" aria-label="手机宽度" data-control="width">' +
+      option('360','360 vp',state.deviceWidth===360) +
+      option('390','390 vp',state.deviceWidth===390) +
+      option('430','430 vp',state.deviceWidth===430) +
+    '</select><select class="select" aria-label="页面状态" data-control="status">' +
+      option('normal','正常态',state.status==='normal')+
+      option('empty','空状态',state.status==='empty')+
+      option('loading','加载中',state.status==='loading')+
+      option('error','错误态',state.status==='error')+
+    '</select><button class="toolbar-btn" data-act="theme">' + (state.light ? '☾ 深色' : '☼ 浅色') + '</button></div></div>';
+  root.innerHTML = '<main class="workspace" style="--accent:' + app.primary + ';--accent2:' +
+    app.secondary + ';--glow:' + glow + '">' +
+    renderSidebar(APPS,state) + '<section class="stage">' + toolbar +
+    '<div class="stage-content"><div class="phone" style="--phone-width:' + state.deviceWidth + 'px">' +
+    renderPhone(app,page,state) + '</div></div>' +
+    '<p class="footer-hint">演示视觉与交互层，不展示真实日轨/地图/音频识别/电脑控制结果　·　键盘 ← → 可切换页面</p>' +
+    '</section>' + renderInspector(app,page) + '</main>';
+}
+function showToast(message) {
+  const old = document.querySelector('.toast');
+  if (old) old.remove();
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  window.setTimeout(() => toast.remove(), 2800);
+}
+document.addEventListener('click', (event) => {
+  const target = event.target;
+  if (!(target instanceof Element)) return;
+  const element = target.closest('[data-act]');
+  if (!element) return;
+  const act = element.dataset.act || '';
+  if (act==='app') {
+    const nextApp = element.dataset.app || '';
+    if (nextApp==='lightbearing'||nextApp==='framemori'||nextApp==='voxcarve'||nextApp==='macroloom') {
+      state.appId=nextApp; state.pageIndex=0; state.activeTab=0; state.status='normal'; state.sheet=false; render();
+    }
+  } else if(act==='page') {
+    const index = Number(element.dataset.index);
+    if(Number.isInteger(index) && index>=0 && index<currentApp().pages.length) {
+      state.pageIndex=index;state.activeTab=0;state.status='normal';state.sheet=false;render();
+    }
+  } else if(act==='next'||act==='prev') {
+    const total = currentApp().pages.length;
+    state.pageIndex=(state.pageIndex + (act==='next'?1:-1)+total)%total;
+    state.activeTab=0;state.status='normal';state.sheet=false;render();
+  } else if(act==='sheet') {
+    state.sheet=true; render();
+  } else if(act==='close-sheet') {
+    state.sheet=false; render();
+  } else if(act==='normal') {
+    state.status='normal';render();
+  } else if(act==='theme') {
+    state.light=!state.light;render();
+  } else if(act==='tab') {
+    state.activeTab=Number(element.dataset.index)||0;render();
+  } else if(act==='toggle') {
+    const on = element.classList.toggle('on');
+    element.setAttribute('aria-pressed',on?'true':'false');
+  } else if(act==='demo') {
+    showToast((element.dataset.label||'控件')+'：仅展示交互反馈，不执行实际系统功能');
+  }
+});
+document.addEventListener('change', (event) => {
+  const element = event.target;
+  if (!(element instanceof HTMLSelectElement)) return;
+  if (element.dataset.control==='width') {
+    const value = Number(element.value);
+    if(value===360||value===390||value===430){state.deviceWidth=value;render();}
+  } else if(element.dataset.control==='status') {
+    const next=element.value;
+    if(next==='normal'||next==='empty'||next==='loading'||next==='error'){state.status=next;render();}
+  }
+});
+document.addEventListener('keydown', (event) => {
+  if (event.target instanceof HTMLInputElement || event.target instanceof HTMLSelectElement) return;
+  if(event.key==='ArrowRight'||event.key==='ArrowLeft'){
+    const delta=event.key==='ArrowRight'?1:-1;
+    const total=currentApp().pages.length;
+    state.pageIndex=(state.pageIndex+delta+total)%total;
+    state.status='normal';state.activeTab=0;render();
+  }
+});
+render();
+</script>
+</body>
+</html>
