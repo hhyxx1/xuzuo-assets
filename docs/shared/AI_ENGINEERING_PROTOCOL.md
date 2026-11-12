@@ -1,5 +1,7 @@
 # 编程 AI 统一执行约束（给 Codex / Claude Code / DevEco Code）
 
+> **文档版本：v0.3｜状态：DRAFT_FOR_REVIEW｜草案日期：2026-11-12**。本规范尚待用户批准，不代表已发布或真机验收。
+
 ## 读取顺序
 
 1. 读 `README.md`、`docs/00_START_HERE.md`、`docs/shared/*`。
