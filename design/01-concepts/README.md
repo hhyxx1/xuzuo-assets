@@ -1,9 +1,15 @@
-# 01 · 视觉方向
+# 01 · 视觉概念层（全部可编辑 SVG）
 
-四款同风格：深海军蓝、柔和发光层级、现代圆角、清晰数字、各自专属的主辅色。**StoroPix 视觉独立，不参与改造**。
+四款 App 同属深海军蓝 UI 视觉系统，主色各自区分。StoroPix 已上架并定型，**完全不纳入统一风格**。
 
-本层将包含可编辑 SVG 概念板，明确品牌、视觉比例和局部 UI 气质。
+| 概念 | 独立矢量展示图 | 主强调 |
+| --- | --- | --- |
+| 四款品牌系统 | [全系列视觉总览](boards/four-app-visual-system.svg) | 系列共同字体/圆角/深色 |
+| LightBearing / 逐光 | [逐光概念板](boards/lightbearing-direction.svg) | 琥珀 / 青色 |
+| FrameMori / 帧间 | [帧间概念板](boards/framemori-direction.svg) | 珊瑚 / 薄荷 |
+| VoxCarve / 声剪 | [声剪概念板](boards/voxcarve-direction.svg) | 紫藤 / 杏 |
+| MacroLoom / 键阵 | [键阵概念板](boards/macroloom-direction.svg) | 青柠 / 天蓝 |
 
-之前生成的 AI 汇总海报只作为灵感参考，可能有错误数字与不完整页面；最终的页面结构以 02 层的 42 个独立画布和 MD 规格为准。
+本层是视觉方向而不是完整业务 UI；**42 个逐页画布在 [02-page-designs](../02-page-designs/README.md)**，素材在 [04-assets](../04-assets/README.md)。
 
-LightBearing 新首页不复用旧版 UI / R2 的排版、装饰和导航，保留的仅是可靠业务能力与正确性约束。
+LightBearing 的画面从零重构，不借用既有 UI / UI-1B-R2 视觉；只沿用业务目标、可靠算法与数据边界。所有概念示意中的数字不代表真实计算结果。

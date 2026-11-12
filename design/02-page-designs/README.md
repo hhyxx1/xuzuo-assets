@@ -1,9 +1,18 @@
-# 02 · 逐页 UI 设计
+# 02 · 42 个业务页面设计与交互规格
+> 四款应用按照现有 v0.3 PRD 的业务路由逐个覆盖，每页一份 **390×844 独立 SVG + 独立 Markdown 实施规格**。
 
-按此前已经审核的 PRD 覆盖 **42 个业务页面**：LightBearing 12；FrameMori / VoxCarve / MacroLoom 各 10。每页都有独立 `screens/<app>/<route>.svg` 及 `specs/<app>/<route>.md`，且由唯一 token 系统绘制。
+## 入口
+- **[浏览器离线页面预览](preview/index.html)**：选择应用、切换 42 个页面，可演示通用 empty/loading/error/unsupported 状态，支持键盘左右切页。GitHub 不直接运行 HTML，建议下载分支 ZIP 后在浏览器打开此文件。
+- [LightBearing / 逐光 · 12 页](indexes/lightbearing.md)
+- [FrameMori / 帧间 · 10 页](indexes/framemori.md)
+- [VoxCarve / 声剪 · 10 页](indexes/voxcarve.md)
+- [MacroLoom / 键阵 · 10 页](indexes/macroloom.md)
+- [机器可读页面清单](page-manifest.json)
+- [共享组件预览](../03-design-system/components/gallery.html)
 
-- SVG：可编辑、可查看的高保真结构布局示例，文字及数字为模拟数据。
-- MD：组件构成、手势/导航、实时数据/持久化、异常状态、响应式布局和 ArkUI 开发注意事项。
-- [交互式页面画廊](preview/index.html)：浏览器离线打开，从 App/页面切换；**不含真实业务 API**。
+## 每个页面包含
+独立的布局 SVG、主 CTA、列表/仪表、底部导航、明确的视觉层级；对应的 MD 规格覆盖页面目标、组件属性、点击事件、导航、异常与空态、加载、权限、响应式、无障碍、真实数据映射。
 
-**重要**：页面 SVG 是设计基准，非动态交互页面。动态数值/地图/波形/太阳曲线必须由运行时业务组件绘制。
+**设计状态不是生产状态**：静态矢量画布出现的时间、坐标、云端/电脑在线状态、图表曲线和数值皆为演示数据。实时业务组件由相应 App 的领域模型、SDK26 或 Windows Agent 驱动，不允许把 SVG 直接当业务结果。
+
+**LightBearing 特殊说明**：本次页面设计不参考任何既有 UI/R2 HTML 设计；既有太阳计算与时区内核仍应在代码层保留并回归测试。详见 [从零设计边界](LIGHTBEARING_FRESH_REDESIGN.md)。

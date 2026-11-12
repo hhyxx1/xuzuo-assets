@@ -1,20 +1,17 @@
-# 四款 App 共享设计系统
+# 03 · 四款共享设计系统（StoroPix 视觉独立）
 
-只适用于 LightBearing/FrameMori/VoxCarve/MacroLoom；StoroPix 不强制使用。
+唯一 token 来源：[tokens.json](tokens/tokens.json)；浏览器/概念原型的 CSS 参考：[tokens.css](tokens/tokens.css)。
 
-- [机器可读 tokens.json](tokens/tokens.json)
-- [CSS 参考 tokens.css](tokens/tokens.css)（仅原型预览，真实 App 用 ArkUI 原生组件/资源）
-- [组件合同](components/COMPONENT_SPEC.md)
-- [状态与无障碍](components/STATES_AND_ACCESSIBILITY.md)
+- [共享组件合同](components/COMPONENT_SPEC.md)：19 类基础组件的 Props、事件、状态、原生实现建议
+- [组件状态与无障碍](components/STATES_AND_ACCESSIBILITY.md)
+- [可点击组件状态画廊](components/gallery.html)（下载仓库后离线打开）
+- **[组件图谱 SVG](components/component-atlas.svg)**：GitHub 可直接预览的基础控件板
+- [四款专属色与 Bundle 识别元数据](tokens/app-metadata.json)
+- [HarmonyOS ArkUI 设计实施映射](ARKUI_IMPLEMENTATION_MAPPING.md)
 
-## Token 规范
-深色背景 `#0B1622`，卡片 `#152836`，抬升 `#1C3546`，主文字 `#F9FAF3`。
+## 共享原则
+所有页面复用 XzPageShell、XzTopBar、XzPrimaryButton、XzCard、XzListCell、XzSegmented、XzBottomNav 等组件合同。App 的主要差异由 `accent` / `accent2` Token 注入，不复制四份核心组件。太阳轨迹、相机预览、波形编辑、宏控制等独有模块**必须由业务专用组件实现**，不可硬套静态插画。
 
-| App | 主强调色 | 辅助色 |
-| --- | --- | --- |
-| LightBearing / 逐光 | `#FFBC6B` | `#73D9D5` |
-| FrameMori / 帧间 | `#FF9471` | `#75DDC4` |
-| VoxCarve / 声剪 | `#AF9DFF` | `#FDBF92` |
-| MacroLoom / 键阵 | `#B3F07C` | `#7FC8FF` |
-
-所有组件在本库为**设计合同与资产**；不是已编译的 ArkUI 库。若开发共享源码组件，建议独立的 XuzuoUIKit 包并明确其 API 26 测试与版本号。
+- 背景 `#0B1622`，Surface `#152836`，Raised `#1C3546`，文字 `#F9FAF3`。
+- 深浅主题的颜色、对比度、字体和安全区跟随语义 Token，项目构建还需真实 SDK26 校验。
+- 此处提供设计合同与可交互 HTML 状态演示；**不是已经编译验证的 ArkTS 组件库**。

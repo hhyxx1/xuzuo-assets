@@ -4,6 +4,13 @@
 >
 > **本仓库定位：** Xuzuo Studio 系列应用的跨项目产品文档、设计规范及未来品牌素材库。不是将五款 App 源码混合在一起的工程。当前**只提交文档，不含新素材、应用代码或真实用户数据**。
 
+
+## 已启动的四层 UI 与素材交付（设计分支）
+
+**[Xuzuo Studio · 四层设计交付入口](design/README.md)** → [42 个页面设计与离线预览](design/02-page-designs/README.md) → [共享设计系统与交互组件](design/03-design-system/README.md) → [94 个独立 SVG 素材](design/04-assets/README.md)。
+
+**范围**：LightBearing、FrameMori、VoxCarve、MacroLoom 共享视觉设计，**StoroPix 保留已定型的独立视觉**。设计稿仅是可审核的 SVG / Markdown / HTML 源文件，尚未编译成 ArkUI 或投入生产。
+
 ## 从这里开始
 
 - **[已注册包名与版本来源登记](docs/03_PACKAGE_AND_RELEASE_REGISTRY.md)**：已上线产品与未注册候选的身份对照；严禁按 GitHub 用户名猜包名。
