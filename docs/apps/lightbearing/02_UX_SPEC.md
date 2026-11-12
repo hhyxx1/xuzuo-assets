@@ -1,8 +1,10 @@
 # 逐光 / LightBearing · UI / UX 完整设计规格
 
-> Xuzuo Studio · API 26 only · v0.1 草案，等待用户审核；不代表编译验证。
+> Xuzuo Studio · API 26 only · v0.3 草案，等待用户审核；不代表编译验证。
 
 **应用**：逐光 / LightBearing · **Bundle**：`com.hhyxx.LightBearing` · **代码仓库**：https://github.com/hhyxx1/LightBearing。
+
+**设计与生产状态区别**：[R2 视觉原型](https://github.com/hhyxx1/LightBearing/blob/fix/core-quality-audit/design/ui1b-r2/final-home.html) 已存在于 `fix/core-quality-audit`，但其 [设计报告](https://github.com/hhyxx1/LightBearing/blob/fix/core-quality-audit/docs/design/UI1B_R2_FINAL_DESIGN.md) 明确说明当轮未修改生产 ArkTS。此文件规定下一轮目标，**不等同于已上架真实 UI**；实现前与现有 HomePage/ObservationPanel/Charts 对照。
 
 ## 1. 视觉身份
 
