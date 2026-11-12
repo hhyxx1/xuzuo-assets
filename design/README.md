@@ -17,5 +17,9 @@
 - 本套组件在 ArkTS 实现时按项目技术基线使用原生 ArkUI，不采用 WebView 冒充原生。
 - 验收入口：[DESIGN_QA.md](DESIGN_QA.md)。本分支素材为待用户审稿状态，不自动合并 main。
 
+- [设计审阅清单](REVIEW_CHECKLIST.md)
+- [设计变更日志](DESIGN_CHANGELOG.md)
+- [PNG 预览文件结构校验脚本](tools/check_pngs.py)
+
 ## 阅读路线
 先 [组件与 Token](03-design-system/README.md) → [页面索引](02-page-designs/README.md) → 查看每个页面 SVG → [资源清单](04-assets/README.md) → 独立进行 ArkUI 实现和 SDK26 / 设备验收。
