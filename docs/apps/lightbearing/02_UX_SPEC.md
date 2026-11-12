@@ -6,6 +6,8 @@
 
 **设计与生产状态区别**：[R2 视觉原型](https://github.com/hhyxx1/LightBearing/blob/fix/core-quality-audit/design/ui1b-r2/final-home.html) 已存在于 `fix/core-quality-audit`，但其 [设计报告](https://github.com/hhyxx1/LightBearing/blob/fix/core-quality-audit/docs/design/UI1B_R2_FINAL_DESIGN.md) 明确说明当轮未修改生产 ArkTS。此文件规定下一轮目标，**不等同于已上架真实 UI**；实现前与现有 HomePage/ObservationPanel/Charts 对照。
 
+**最新版视觉裁定**：本页保留完整产品信息架构，但曾提到的 R2 视觉参考已经被用户否定。开发按 [简约实用 UI](../../development/MINIMAL_UI_DIRECTIVE.md) 与 [LightBearing 开发专项](../../development/APPS/lightbearing.md) **从头设计 UI**；不要照旧 HomePage / R2 原型排版。真实算法及存储接口不因此重写。
+
 ## 1. 视觉身份
 
 - 品牌方向：太阳轨迹 + 地平线 + 观测节点。

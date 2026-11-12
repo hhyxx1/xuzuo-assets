@@ -2,6 +2,8 @@
 
 > **状态：设计预览 v0.1 / DRAFT_FOR_REVIEW。** 所有页面为视觉与交互说明，不宣称原生 HarmonyOS 已实现或通过真机测试。
 
+**开发最新入口**：[分阶段原生 ArkTS AI 开发指令](../docs/development/README.md)；旧 HTML 里多处大渐变/演示数值**不是正式 UI 审美或业务数据**。原生 App 以 [极简工具风格裁定](../docs/development/MINIMAL_UI_DIRECTIVE.md) 为准，专业页面使用真实组件和业务服务。
+
 ## 免安装快速预览
 
 **推荐先查看 [单文件离线交互预览](preview-standalone.html)**：在 GitHub 打开文件并选择 **Download raw**，保存成 `preview-standalone.html`，用 Chrome / Edge 双击打开即可。它把 HTML、CSS、浏览器 JS 与 42 页数据打包到同一个文件，**不需要 Node、npm 或 HTTP 服务器**。源码仍以 `src/*.ts` 为主。

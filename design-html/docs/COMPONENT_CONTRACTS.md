@@ -2,11 +2,13 @@
 
 > 共享外观不等于共享业务数据。**四款必须复用一套主题 token、基础布局、基础状态组件。**
 
+**最新风格约束**：HTML/TS 当前原型里的大渐变、发光视觉不是用户批准的最终设计；原生实现必须遵循 [简约工具 UI](../../docs/development/MINIMAL_UI_DIRECTIVE.md)。下表的组件种类与逻辑仍可参考，装饰性 Gradient 不是必须属性。
+
 ## 组件目录
 
 | HTML/TS BlockKind | 组件合同 | 迁移后的 ArkUI 形式 |
 |---|---|---|
-| `hero` | 固定输入/输出 + Normal/Empty/Error | HeroBanner → Stack + Image + Gradient + Button |
+| `hero` | 固定输入/输出 + Normal/Empty/Error | HeroSection → Column + Text + optional approved Image + Button（默认纯色，无强制渐变） |
 | `metrics` | 固定输入/输出 + Normal/Empty/Error | MetricCard → Grid + Text + status |
 | `chart` | 固定输入/输出 + Normal/Empty/Error | DataChart → Canvas（业务数据驱动） |
 | `timeline` | 固定输入/输出 + Normal/Empty/Error | TimeAxis → Scroll + Canvas + event markers |

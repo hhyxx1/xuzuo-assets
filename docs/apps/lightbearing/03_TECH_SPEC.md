@@ -6,6 +6,8 @@
 
 **仓库事实已复核**：`main@5468b4d` 与 `fix/core-quality-audit@e89b026`（2026-11-12 核查）。fix 分支存在 `ObservationPanel.ets`、`Charts.ets`、`HomePage.ets`、`design/ui1b-r2/final-home.html`；真实 AGC 注册信息须在修改/签名前与后台确认。参见 [包名及验证登记](../../03_PACKAGE_AND_RELEASE_REGISTRY.md)。
 
+**视觉执行规则更新（2026-11-12）**：此技术规格中所有“移植 R2 / 从旧 HomePage 视觉迭代”的表述只代表代码依赖与历史背景，**不代表复用旧视觉**。用户要求全新简约 UI，详见 [开发专项指令](../../development/APPS/lightbearing.md)；太阳算法、时区与持久化契约须保留并测试。
+
 ## 1. 技术基线与工程边界
 
 - Stage + ArkTS + ArkUI、API 26 only；不能偷偷兼容 Android SDK/旧版视频编辑 SDK。
@@ -13,12 +15,12 @@
 - `entry/` 存 UIAbility 和页面，`model/`、`domain/`、`repository/`、`services/`、`platform/`、`components/` 分层。
 - `assets` 仅由本仓库审阅后复制；签名/证书/用户数据不入 Git。
 
-**现状例外**：保留已有 ArkTS 工程，不重新生成 `AppScope`；先对比现有分支，保持签名包名、已测核心代码和 RDB schema。UI-1B-R2 只有 HTML 原型，下一步应从现有 `ObservationPanel` 与 `HomePage` 迭代。
+**现状例外**：保留已有 ArkTS 工程，不重新生成 `AppScope`；先对比现有分支，保持签名包名、已测核心代码和 RDB schema。UI-1B-R2 只有历史 HTML 原型；新界面必须完全重新设计，可从现有 `ObservationPanel` 与 `HomePage` **分析数据流、复用业务接口**，不照搬旧布局。
 
 ## 2. API 与子系统设计（必须探测真实性）
 
 - 现有 `SolarCalc.ets` + `TimeUtil.ets` + `LocalTimeResolver.ets`，严禁无测试重写
-- `ObservationPanel.ets`、`Charts.ets`、`HomePage.ets` 实际现存；R2 为设计原型，需映射到 ArkUI
+- `ObservationPanel.ets`、`Charts.ets`、`HomePage.ets` 实际现存；R2 为历史原型；**只保留可用业务数据流，重新设计 ArkUI**
 - 已有 `ArkData RDB`、Localization Kit i18n 时区、Location Kit、Sensor Service Kit、Core File Kit
 - 离线地图由 Canvas 作方位图；Map Kit 需要 AGC 配置才启用
 - 现存 `fix/core-quality-audit` 分支领先 main；先审查 diff 后在新分支实施
@@ -63,7 +65,7 @@ NEW → VALIDATING → QUEUED → RUNNING → VERIFYING → SUCCESS
 - 角度环形差：`min(abs(a-b),360-abs(a-b))`；搜索输出必须重新代回太阳算法。
 - 时区转换使用 Localization Kit 的 IANA 规则；`GAP / OVERLAP / UNAVAILABLE` 显式处理，不能静默选错 UTC。
 - 观测组件对 `selectedUtc` 只保留单一事实源，不让读数、曲线、分段带和日历分别算“今天”。
-- `ObservationBands`、`Timeline`、`TimeSelection` 已有代码，移植 R2 仅重构显示与纯函数适配；先读测试。
+- `ObservationBands`、`Timeline`、`TimeSelection` 已有代码，新 UI 只应复用真实业务数据流与可验证纯函数，避免沿袭 R2；先读测试。
 - Map Kit 尚未有完整配置时保留离线方位图，不将无地图显示为核心失败。
 
 ## 7. 权限、审计、错误恢复

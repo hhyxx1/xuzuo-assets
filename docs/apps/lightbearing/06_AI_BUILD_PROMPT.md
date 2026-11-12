@@ -4,7 +4,9 @@
 
 **应用**：逐光 / LightBearing · **Bundle**：`com.hhyxx.LightBearing` · **代码仓库**：https://github.com/hhyxx1/LightBearing。
 
-> 复制下面整段作为新编程会话的任务。请同时把本应用的其他五份 Markdown 规范放到工作区并允许 AI 读取。
+> **此文件保留为历史项目任务说明，实际新开编程会话必须优先使用 [最新阶段提示词](../../development/README.md) 和 [LightBearing 专项合同](../../development/APPS/lightbearing.md)。用户明确要求全新 UI，禁止照搬旧 R2 视觉。**
+>
+> 本文旧版内容仅供查阅历史需求；若与最新开发规范冲突，以新规范为准。
 
 ```text
 你是 HarmonyOS 7 / API 26 原生应用高级工程师，负责完整开发「逐光 / LightBearing」。
@@ -24,7 +26,7 @@
 此 App 已经存在于 https://github.com/hhyxx1/LightBearing ，严禁从零重建！
 先分析 main 与 fix/core-quality-audit 的差异、已有源码与实际测试，选择新的 UI 实施分支。
 现有签名对应 com.hhyxx.LightBearing，不能擅自改成全小写。
-R2 HTML 是设计预览，不是已部署生产页面；先将真实首页与 R2 原生对齐，保留天文算法与数据库。
+R2 HTML 只是被否定的历史设计参考，**不得照其视觉重新实现**；以新的简约工具 UI 标准完全重设界面，同时保留已验证天文算法与数据库。
 
 实施纪律：
 1. 检查实际 DevEco/SDK26/工具链与工程现状；发现不可用项如实写 NOT_RUN，不虚构编译结果。
@@ -42,7 +44,7 @@ R2 HTML 是设计预览，不是已部署生产页面；先将真实首页与 R2
 
 本产品核心实现依赖顺序：
 1. 基线审查：读取 main 和 fix/core-quality-audit 全部视觉/核心差异，确定真实运行基线
-2. UI-1C：首页 R2 的观测仪表、真实色带、下一窗口提示原生化
+2. UI 全新重设计：保留真实读数/时间选取/下一窗口等业务功能，界面按最新简约设计独立重新组织，不照搬 R2
 3. 扩展：太阳轨迹页、反向寻光结果页、计划/日历/机位库视觉统一
 4. 回归：不改变数学、RDB、包名；按边界场景重跑宿主机和真机
 5. 用户通过素材审核后再接入 icon/onboarding/empty/share 资源
