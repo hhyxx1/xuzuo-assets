@@ -25,6 +25,12 @@
 | [隐私与安全](docs/shared/PRIVACY_SECURITY.md) | 本地数据、媒体、权限和用户隐私 |
 | [素材计划与入库](docs/shared/ASSET_PIPELINE.md) | 素材需求、生成边界、版权与审计流程 |
 
+## 品牌与视觉关系（已确认）
+
+**四款采用同一套视觉设计系统**：逐光 LightBearing、帧间 FrameMori、声剪 VoxCarve、键阵 MacroLoom。共享几何语言、基础色板、插画画风、主题组件与动效原则，各自采用专属强调色和工作台交互。
+
+**店图匠 StoroPix 视觉独立**：已上架并定型，不强制改图标、配色、页面结构或宣传素材；只在 `xuzuo-assets` 中共管文档、开发规范、审核记录及未来可选素材。详见 [品牌适用范围](docs/shared/BRAND_SYSTEM.md)。
+
 ## 五款独立产品
 
 | App | 主要用途 | 完整开发文档 |
@@ -33,7 +39,7 @@
 | **帧间 FrameMori** | 定格动画拍摄、逐帧编辑与视频导出 | [七篇文档](docs/apps/framemori/README.md) |
 | **声剪 VoxCarve** | 语音转写与文字驱动的音频剪辑 | [七篇文档](docs/apps/voxcarve/README.md) |
 | **键阵 MacroLoom** | HarmonyOS 控制 Windows 快捷操作 | [七篇文档](docs/apps/macroloom/README.md) |
-| **店图匠 StoroPix** | **已上架 0.2.0（开发者确认）**；现有商品图批量处理应用，后续增量优化 | [七篇文档](docs/apps/storopix/README.md) |
+| **店图匠 StoroPix** | **已上架 0.2.0（开发者确认）**；独立视觉，不纳入四款同风格改造；现有商品图批量处理应用 | [七篇文档](docs/apps/storopix/README.md) |
 
 每款均含：**六类核心规格**（产品 PRD、页面与交互规范、技术架构、验收矩阵、素材需求清单、AI 开发任务书）**加一份导航 README，共七个文件**。v0.3 草案仓库合计 **48 个 Markdown 文件**（根 README 1 个 + `docs/` 下 47 个）。
 
