@@ -49,7 +49,7 @@ function render() {
     '<p class="footer-hint">演示视觉与交互层，不展示真实日轨/地图/音频识别/电脑控制结果　·　键盘 ← → 可切换页面</p>' +
     '</section>' + renderInspector(app,page) + '</main>';
 }
-function showToast(message): void {
+function showToast(message) {
   const old = document.querySelector('.toast');
   if (old) old.remove();
   const toast = document.createElement('div');
