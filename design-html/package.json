@@ -1,0 +1,16 @@
+{
+  "name": "xuzuo-html-design-preview",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "HTML + TypeScript four-app UX design preview, ArkTS migration-aware",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "check": "tsc --noEmit -p tsconfig.json",
+    "serve": "python3 -m http.server 8123",
+    "verify": "node tools/verify.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
