@@ -1,10 +1,12 @@
 # 序作 Studio · 文档审阅入口
 
-> **草案日期：2026-11-12｜版本：v0.2｜状态：DRAFT_FOR_REVIEW（待用户确认，尚未定稿）**
+> **草案日期：2026-11-12｜版本：v0.3｜状态：DRAFT_FOR_REVIEW（待用户确认，尚未定稿）**
 >
 > 当前分支仅包含产品与技术文档。**尚未开始新素材制作、素材上传、正式应用开发或修改 LightBearing 生产代码。**
 
 ## 审阅顺序
+
+> **先核对 [包名与发布版本事实登记](03_PACKAGE_AND_RELEASE_REGISTRY.md)**。LightBearing 与 StoroPix 均为既有应用；前三款新项目的包名为待注册候选。
 
 1. [总产品地图：五款 App 各自解决的问题](01_PORTFOLIO_MAP.md)
 2. [系列品牌规范](shared/BRAND_SYSTEM.md) 与 [ArkUI 设计系统](shared/UI_DESIGN_SYSTEM.md)
@@ -24,6 +26,8 @@
 | 店图匠 StoroPix | [PRD](apps/storopix/01_PRODUCT_PRD.md) | [页面](apps/storopix/02_UX_SPEC.md) | [架构](apps/storopix/03_TECH_SPEC.md) | [测试](apps/storopix/04_ACCEPTANCE.md) | [清单](apps/storopix/05_ASSET_BRIEF.md) | [执行](apps/storopix/06_AI_BUILD_PROMPT.md) |
 
 ## 待你审核的关键决策
+
+- StoroPix 开发者确认已上架 0.2.0；公开代码 `main` 仍为 0.1.0，下一次迭代需先核对上架 HAP 与源码的对应提交。
 
 | 项目 | 目前方案 | 是否通过 |
 | --- | --- | --- |
