@@ -1,6 +1,6 @@
 # 声剪 / VoxCarve · 面向编程 AI 的完整执行指令
 
-> Xuzuo Studio · API 26 only · v0.1 草案，等待用户审核；不代表编译验证。
+> Xuzuo Studio · API 26 only · v0.3 草案，等待用户审核；不代表编译验证。
 
 **应用**：声剪 / VoxCarve · **Bundle**：`com.hhyxx.voxcarve` · **代码仓库**：（待创建独立仓库）。
 
