@@ -1,8 +1,12 @@
 # 店图匠 / StoroPix · 技术架构与 API26 实施规格
 
-> Xuzuo Studio · API 26 only · v0.1 草案，等待用户审核；不代表编译验证。
+> Xuzuo Studio · API 26 only · v0.3 草案，等待用户审核；不代表编译验证。
 
-**应用**：店图匠 / StoroPix · **Bundle**：`com.hhyxx1.storopix` · **代码仓库**：（待创建独立仓库）。
+**应用**：店图匠 / StoroPix · **Bundle**：`com.hhyxx.storopix` · **代码仓库**：https://github.com/hhyxx1/storopix。
+
+## 0. 已发布应用：差异化升级，不重新建工程
+
+本规格对应现有 [hhyxx1/storopix](https://github.com/hhyxx1/storopix) 仓库，已经包含 Stage/ArkTS/ArkUI、项目持久化、图像处理和真机验收。不得照此通用目录树重新初始化覆盖原工程。先逐项核查 `README.md`、`documents/IMPLEMENTATION.md`、`documents/PRD_CLOSURE.md` 及 `AppScope/app.json5`，建立“已有/部分支持/未实现/未验证”的差距表；仅实现增量需求。真实包名固定为 `com.hhyxx.storopix`，已上架版本 0.2.0 由开发者确认但在架 HAP 与 GitHub `main` 的 0.1.0 配置尚未做二进制对应核验。
 
 ## 1. 技术基线与工程边界
 
