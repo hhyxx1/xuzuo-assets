@@ -2,7 +2,7 @@
 
 > **版本：v0.3 审阅草案｜日期：2026-11-12｜状态：待用户确认（DRAFT_FOR_REVIEW）**
 >
-> **本仓库定位：** Xuzuo Studio 系列应用的跨项目产品文档、设计规范及未来品牌素材库。不是将五款 App 源码混合在一起的工程。当前**只提交文档，不含新素材、应用代码或真实用户数据**。
+> **本仓库定位：** Xuzuo Studio 系列应用的跨项目产品文档、设计规范及未来品牌素材库。不是将五款 App 源码混合在一起的工程。原始 v0.3 审阅分支只含文档；**本独立设计分支已新增完整四层设计资料、独立 SVG 素材与 PNG 图标预览**。仍不含原生应用生产代码或真实用户数据。
 
 
 ## 已启动的四层 UI 与素材交付（设计分支）
@@ -48,7 +48,7 @@
 | **键阵 MacroLoom** | HarmonyOS 控制 Windows 快捷操作 | [七篇文档](docs/apps/macroloom/README.md) |
 | **店图匠 StoroPix** | **已上架 0.2.0（开发者确认）**；独立视觉，不纳入四款同风格改造；现有商品图批量处理应用 | [七篇文档](docs/apps/storopix/README.md) |
 
-每款均含：**六类核心规格**（产品 PRD、页面与交互规范、技术架构、验收矩阵、素材需求清单、AI 开发任务书）**加一份导航 README，共七个文件**。v0.3 草案仓库合计 **48 个 Markdown 文件**（根 README 1 个 + `docs/` 下 47 个）。
+每款均含：**六类核心规格**（产品 PRD、页面与交互规范、技术架构、验收矩阵、素材需求清单、AI 开发任务书）**加一份导航 README，共七个文件**。**原始 v0.3 文档基线**为 48 个 Markdown 文件（根 README 1 个 + `docs/` 下 47 个）；本分支另增 `design/` 设计文件、8 份 AI/UI 任务衔接说明及独立资源。
 
 ## 重要约束
 
@@ -57,7 +57,7 @@
 - **LightBearing 现有 AGC 注册 Bundle Name：`com.hhyxx.LightBearing`**。不得按早期 PRD 擅自改成全小写。已有 [源码仓库](https://github.com/hhyxx1/LightBearing) 与 `fix/core-quality-audit` 质量审计分支；本库只管理该应用的设计开发文档，不覆盖业务代码。
 - 目标基线 **HarmonyOS 7 / API 26（26.0.0 Release）**；华为官方[详细版本表](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-2600/)将正式发布日期列为 2026-08-29，而[版本汇总页](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-allversion/)列为 2026-08-28；两处日期差异已标明，均确认 26.0.0 为 Release。每项高风险接口、编解码与设备能力仍需单独核验。
 - **所有 PRD、设计稿与测试矩阵都是待审核的开发规格**，不能视作已编译、已实现或已在真机验证。
-- **审核同意前不生成或上传任何新增图片素材**。今后的 AI 生成原图、正式优化资源、授权来源与版本信息分开管理。
+- **用户已授权四款同风格 App 的设计素材制作与入库**，本设计分支的 SVG 原件和 PNG 预览已生成并提交；**最终素材审稿、正式 HAP 集成与上架仍未批准**。请按 [设计审阅清单](design/REVIEW_CHECKLIST.md) 继续核验。
 - 原创品牌名称、图标与内容未来是否公开授权，尚未决定；请勿默认开源可商用。
 
 **主要语言：简体中文；应用英文名、代码标识、Kit 名称和技术术语保留英文。**
